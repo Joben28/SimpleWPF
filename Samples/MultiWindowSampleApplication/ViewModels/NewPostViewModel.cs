@@ -23,7 +23,7 @@ namespace MultiWindowSampleApplication
             SubmitCommand = new SimpleRelayCommand(NavigateToB);
         }
 
-        private void NavigateToB(object obj)
+        private void NavigateToB()
         {
             Navigate(new PreviewPostViewModel(Post));
         }

@@ -21,7 +21,7 @@ namespace MultiWindowSampleApplication
             LoginCommand = new SimpleRelayCommand(Login);
         }
 
-        private void Login(object obj)
+        private void Login()
         {
             var auth = new AuthCache();
             var account = new AccountModel();

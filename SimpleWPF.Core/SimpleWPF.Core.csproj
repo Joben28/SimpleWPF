@@ -56,7 +56,6 @@
     <Compile Include="ViewModels\SimpleRelayCommand{T}.cs" />
     <Compile Include="ViewModels\SimpleViewModel.cs" />
     <Compile Include="ViewModels\SimplePropertyChanged.cs" />
-    <Compile Include="ViewModels\SimpleRelayCommand.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

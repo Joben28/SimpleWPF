@@ -41,7 +41,7 @@ namespace MultiWindowSampleApplication.ViewModels
             HomeCommand = new SimpleRelayCommand(NavigateToHome);
         }
 
-        private void NavigateToHome(object obj)
+        private void NavigateToHome()
         {
             Navigate(new NewPostViewModel());
         }

@@ -19,12 +19,12 @@ namespace SingleWindowSampleApplication.ViewModels
             GotoYellowCommand = new SimpleRelayCommand(GotoYellow);
         }
 
-        private void GotoYellow(object obj)
+        private void GotoYellow()
         {
             Navigate(new YellowViewModel());
         }
 
-        private void GotoBlue(object obj)
+        private void GotoBlue()
         {
             Navigate(new BlueViewModel());
         }

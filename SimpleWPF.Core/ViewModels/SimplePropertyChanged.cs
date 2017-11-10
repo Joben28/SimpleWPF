@@ -12,22 +12,19 @@ namespace SimpleWPF.Core.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged(string prop)
+        protected virtual void OnPropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public void OnPropertyChanged<T>(ref T property, T value, [CallerMemberName] string propertyName = "")
+        protected virtual bool OnPropertyChanged<T>(ref T backingField, T value, [CallerMemberName] string propertyName = "")
         {
-            if(Equals(property, value))
-                return;
+            if (EqualityComparer<T>.Default.Equals(backingField, value))
+                return false;
 
-            property = value;
-            var handler = PropertyChanged;
-            if (handler != null)
-            {
-                OnPropertyChanged(propertyName);
-            }
+            backingField = value;
+            OnPropertyChanged(propertyName);
+            return true;
         }
     }
 }

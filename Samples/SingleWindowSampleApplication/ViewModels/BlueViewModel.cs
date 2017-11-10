@@ -17,7 +17,7 @@ namespace SingleWindowSampleApplication.ViewModels
             GotoRedCommand = new SimpleRelayCommand(GotoRed);
         }
 
-        private void GotoRed(object obj)
+        private void GotoRed()
         {
             Navigate(new RedViewModel());
         }

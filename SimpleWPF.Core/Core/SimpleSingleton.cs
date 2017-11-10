@@ -9,6 +9,7 @@ namespace SimpleWPF.Core.Core
     public abstract class SimpleSingleton : IDisposable
     {
         private static readonly List<SimpleSingleton> Singletons = new List<SimpleSingleton>();
+
         protected int Count
         {
             get
