@@ -35,7 +35,7 @@ namespace SingleWindowSampleApplication
             //Alternative would be to manually pair types
             //This would idealy be used if you do not follow
             //the naming conventions 'View' and 'ViewModel'
-            //manager.RegisterDataTemplate(typeof(RedViewModel), typeof(RedView));
+            //manager.RegisterDataTemplate<RedViewModel, RedView>();
         }
     }
 }

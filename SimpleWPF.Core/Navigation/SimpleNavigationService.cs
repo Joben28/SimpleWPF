@@ -20,6 +20,11 @@ namespace SimpleWPF.Core.Navigation
 
         public ObservableCollection<SimpleViewModel> NavigationHistory { get; private set; } = new ObservableCollection<SimpleViewModel>();
 
+        private SimpleNavigationService()
+        {
+
+        }
+
         public void Navigate(SimpleViewModel navObject)
         {
             if (Provider.Current != null && Provider.Current != navObject)
