@@ -1,4 +1,4 @@
-# Navigation
+# Getting Started
 
 SimpleWPF implements navigation through utilizing data templating. You can either manually define ViewModel and View pairs, or you can rely on these pairs being automatically assigned based on naming conventions.
 
