@@ -1,7 +1,7 @@
-﻿<Application x:Class="LoginSampleApplication.App"
+﻿<Application x:Class="MultiWindowSampleApplication.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:LoginSampleApplication"
+             xmlns:local="clr-namespace:MultiWindowSampleApplication"
              StartupUri="LoginWindow.xaml">
     <Application.Resources>
 

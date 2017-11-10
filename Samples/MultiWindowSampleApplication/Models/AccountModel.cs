@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoginSampleApplication.Models
+namespace MultiWindowSampleApplication.Models
 {
     public class AccountModel
     {

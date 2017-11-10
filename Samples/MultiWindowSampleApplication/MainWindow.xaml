@@ -1,9 +1,9 @@
-﻿<simple:SimpleWindow x:Class="LoginSampleApplication.MainWindow"
+﻿<simple:SimpleWindow x:Class="MultiWindowSampleApplication.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:LoginSampleApplication"
+        xmlns:local="clr-namespace:MultiWindowSampleApplication"
         xmlns:simple="clr-namespace:SimpleWPF.Core.Navigation;assembly=SimpleWPF.Core"
         mc:Ignorable="d"
         Title="Testing" Height="350" Width="525">

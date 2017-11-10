@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using LoginSampleApplication.Models;
-using LoginSampleApplication.ViewModels;
+using MultiWindowSampleApplication.Models;
+using MultiWindowSampleApplication.ViewModels;
 
-namespace LoginSampleApplication
+namespace MultiWindowSampleApplication
 {
     public class NewPostViewModel : AuthorizedViewModel
     {

@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SimpleWPF.Core.Navigation;
-using LoginSampleApplication.Models;
+using MultiWindowSampleApplication.Models;
 using TestingApplication.Models.Cache;
 
-namespace LoginSampleApplication.ViewModels
+namespace MultiWindowSampleApplication.ViewModels
 {
     public class AuthorizedViewModel : SimpleViewModel
     {

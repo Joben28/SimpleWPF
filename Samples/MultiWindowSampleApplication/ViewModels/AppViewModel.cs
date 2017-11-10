@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Navigation;
 
-namespace LoginSampleApplication.ViewModels
+namespace MultiWindowSampleApplication.ViewModels
 {
     public class AppViewModel : SimpleViewModel, ISimpleNavigationHandler
     {

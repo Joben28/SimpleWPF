@@ -1,4 +1,4 @@
-﻿using LoginSampleApplication.ViewModels;
+﻿using MultiWindowSampleApplication.ViewModels;
 using SimpleWPF.Core.Core;
 using SimpleWPF.Core.Navigation;
 using System;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace LoginSampleApplication
+namespace MultiWindowSampleApplication
 {
     /// <summary>
     /// Interaction logic for App.xaml

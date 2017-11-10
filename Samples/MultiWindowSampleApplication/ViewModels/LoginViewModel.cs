@@ -1,4 +1,4 @@
-﻿using LoginSampleApplication.Models;
+﻿using MultiWindowSampleApplication.Models;
 using SimpleWPF.Core.Core;
 using SimpleWPF.Core.Navigation;
 using SimpleWPF.Core.ViewModels;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using TestingApplication.Models.Cache;
 
-namespace LoginSampleApplication
+namespace MultiWindowSampleApplication
 {
     public class LoginViewModel : SimpleViewModel
     {

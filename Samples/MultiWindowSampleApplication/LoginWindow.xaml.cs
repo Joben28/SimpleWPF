@@ -17,7 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LoginSampleApplication
+namespace MultiWindowSampleApplication
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
