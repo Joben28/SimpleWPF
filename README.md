@@ -40,16 +40,18 @@ Once we have an `ApplicationViewModel` we can proceed to implementing some basic
         {
             base.OnStartup(e);
 
-			//Register AppViewModel and initial view
+	    //Register AppViewModel and initial view
             SimpleCore core = new SimpleCore();
             core.Startup(new AppViewModel(), new BlueViewModel(), true);
 
-			//Option 1
+	    //Option 1
             SimpleDataTemplateManager manager = new SimpleDataTemplateManager();
             manager.LoadDataTemplatesByConvention();
 
-			//Option 2
+	    //Option 2
             //manager.RegisterDataTemplate(typeof(RedViewModel), typeof(RedView));
+	    //OR
+	    //manager.RegisterDataTemplate<RedViewModel, RedView>();
         }
     }
 ````
