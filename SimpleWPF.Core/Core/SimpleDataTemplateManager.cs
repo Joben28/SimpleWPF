@@ -30,9 +30,15 @@ namespace SimpleWPF.Core.Core
             }
         }
 
-        public void RegisterDataTemplate(Type viewModelType, Type viewType)
+        public void RegisterDataTemplate<VM, V>()
         {
-            var template = CreateTemplate(viewModelType, viewType);
+            var template = CreateTemplate(typeof(VM), typeof(V));
+            Application.Current.Resources.Add(template.DataTemplateKey, template);
+        }
+
+        public void RegisterDataTemplate(Type viewModel, Type view)
+        {
+            var template = CreateTemplate(viewModel, view);
             Application.Current.Resources.Add(template.DataTemplateKey, template);
         }
 
