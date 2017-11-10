@@ -4,9 +4,9 @@ SimpleWPF implements navigation through utilizing data templating. You can eithe
 
 ## STEP 1: Setting up ApplicationViewModel
 
-Typically to get started for navigation, you want to do some simple setup in your applications `App.xaml.cs`. However, before doing this you must create an `ApplicationViewModel`, you can think of it as a `MainViewModel`. This view model must implement the `ISimpleNavigationHandler` interface and it will hold the navigations *current* view model instance, as well as the current view models *window*.
+Typically to get started for navigation, you want to do some simple setup in your applications `App.xaml.cs`. However, before doing this you must create an `ApplicationViewModel` which will be the provider of the navigation service. This view model must implement the `ISimpleNavigationHandler` interface and it will hold the navigations *current* view model instance, as well as the current view models *window* (If, as you will see later, you use the SimpleWindow).
 
-It also would be preferrable, or even neccessary, to setup the interface properties to handle property change notification. You can do this by using the `SimpleViewModel` as the base class. 
+It also would be neccessary to setup the interface properties to handle property change notification. You can do this by using the `SimpleViewModel` as the base class. 
 
 *AppViewModel Example:*
 ````C#
@@ -30,7 +30,7 @@ It also would be preferrable, or even neccessary, to setup the interface propert
 
 ## STEP 2: Application Startup
 
-Once we have an `ApplicationViewModel`, we can proceed to implementing some basic startup in our projects `App.xaml.cs`. We will do this in an override method of `OnStartup`.
+Once we have an `ApplicationViewModel` we can proceed to implementing some basic startup in our projects `App.xaml.cs`. We will do this in an override method of `OnStartup`.
 
 *App.xaml.cs Example*
 ````C#
@@ -124,7 +124,7 @@ An alternative would be to simply setup the data context in your `MainWindow` co
 # STEP 4: Setting up Window Content
 Lastly, all we have left to do it give our window a `UserControl` for its content, and bind it to our providers `Current` property.
 
-**MainWindow Content Example**
+*MainWindow Content Example*
 ````xaml
     <Grid>
         <ContentControl Content="{Binding Current}"/>
