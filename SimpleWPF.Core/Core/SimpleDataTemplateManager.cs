@@ -9,6 +9,7 @@ using System.Windows.Markup;
 
 namespace SimpleWPF.Core.Core
 {
+    //http://www.ikriv.com/dev/wpf/DataTemplateCreation/
     public sealed class SimpleDataTemplateManager
     {
         public void LoadDataTemplatesByConvention()
