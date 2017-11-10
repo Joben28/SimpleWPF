@@ -10,7 +10,7 @@ namespace SimpleWPF.Core.Navigation
     /// <summary>
     /// An interface for a main object handling navigation.
     /// </summary>
-    public interface ISimpleNavigationHandler
+    public interface ISimpleNavigationProvider
     {
         /// <summary>
         /// Current navigation object.

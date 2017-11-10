@@ -10,13 +10,11 @@ namespace SimpleWPF.Core.Navigation
 {
     public class SimpleWindow : Window, ISimpleWindow
     {
-        private ISimpleNavigationHandler provider;
+        private ISimpleNavigationProvider provider;
 
         public SimpleWindow()
         {
-            provider = SimpleSingleton
-                .GetSingleton<SimpleNavigationService>()
-                .GetProvider();
+            provider = SimpleNavigationService.Instance.Provider;
 
             if (provider.Window == null)
                 provider.Window = this;

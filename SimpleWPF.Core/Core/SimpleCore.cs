@@ -16,18 +16,18 @@ namespace SimpleWPF.Core.Core
     public class SimpleCore
     {
         private SimpleNavigationService service;
-        public ISimpleNavigationHandler Handler { get; set; }
+        public ISimpleNavigationProvider Handler { get; set; }
 
         public SimpleCore()
         {
-            service = SimpleSingleton.AddSingleton<SimpleNavigationService>();
+            service = SimpleNavigationService.Instance;
         }
 
-        public void Startup(ISimpleNavigationHandler navigationHandler, 
+        public void Startup(ISimpleNavigationProvider navigationHandler, 
             SimpleViewModel defaultNavigation = null,
             bool forceDefaultNavigation = false)
         {
-            service.RegisterHandler(navigationHandler);
+            service.RegisterProvider(navigationHandler);
             Handler = navigationHandler;
 
             if(defaultNavigation != null)

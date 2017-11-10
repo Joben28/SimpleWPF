@@ -47,13 +47,12 @@
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Core\SimpleCore.cs" />
     <Compile Include="Core\SimpleDataTemplateManager.cs" />
-    <Compile Include="Core\SimpleSingleton.cs" />
-    <Compile Include="Navigation\ISimpleNavigationHandler.cs" />
+    <Compile Include="Navigation\ISimpleNavigationProvider.cs" />
     <Compile Include="Navigation\ISimpleWindow.cs" />
     <Compile Include="Navigation\SimpleNavigationService.cs" />
     <Compile Include="Navigation\SimpleWindow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\SimpleRelayCommand{T}.cs" />
+    <Compile Include="ViewModels\SimpleRelayCommand.cs" />
     <Compile Include="ViewModels\SimpleViewModel.cs" />
     <Compile Include="ViewModels\SimplePropertyChanged.cs" />
   </ItemGroup>

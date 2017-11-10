@@ -11,7 +11,7 @@ using System.Windows.Navigation;
 
 namespace MultiWindowSampleApplication.ViewModels
 {
-    public class AppViewModel : SimpleViewModel, ISimpleNavigationHandler
+    public class AppViewModel : SimpleViewModel, ISimpleNavigationProvider
     {
         public ICommand HomeCommand { get; set; }
 

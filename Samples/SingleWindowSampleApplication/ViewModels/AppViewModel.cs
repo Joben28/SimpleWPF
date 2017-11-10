@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SingleWindowSampleApplication.ViewModels
 {
-    public class AppViewModel : SimpleViewModel, ISimpleNavigationHandler
+    public class AppViewModel : SimpleViewModel, ISimpleNavigationProvider
     {
         private SimpleViewModel current;
         public SimpleViewModel Current

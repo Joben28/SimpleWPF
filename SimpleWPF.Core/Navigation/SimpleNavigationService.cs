@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 
 namespace SimpleWPF.Core.Navigation
 {
-    public class SimpleNavigationService : SimpleSingleton<SimpleNavigationService>
+    public sealed class SimpleNavigationService
     {
-        private ISimpleNavigationHandler provider;
-        public SimpleViewModel DefaultNavigation;
+        public static readonly SimpleNavigationService Instance = new SimpleNavigationService();
+
+        public ISimpleNavigationProvider Provider { get; private set; }
+        public SimpleViewModel DefaultNavigation { get; private set; }
 
         public int MaxHistoryObjects { get; set; } = 5;
 
@@ -20,28 +22,28 @@ namespace SimpleWPF.Core.Navigation
 
         public void Navigate(SimpleViewModel navObject)
         {
-            if (provider.Current != null && provider.Current != navObject)
+            if (Provider.Current != null && Provider.Current != navObject)
             {
                 if (NavigationHistory.Count >= MaxHistoryObjects)
                 {
                     NavigationHistory.RemoveAt(0);
                 }
 
-                NavigationHistory.Add(provider.Current);
+                NavigationHistory.Add(Provider.Current);
             }
 
-            provider.Current = navObject;
+            Provider.Current = navObject;
         }
 
         public void NavigateWithNewWindow(SimpleViewModel navObject, ISimpleWindow newWindow)
         {
             Navigate(navObject);
-            provider.Window.TransitionWindow(newWindow);
+            Provider.Window.TransitionWindow(newWindow);
         }
 
-        public void RegisterHandler(ISimpleNavigationHandler provider)
+        public void RegisterProvider(ISimpleNavigationProvider provider)
         {
-            this.provider = provider;
+            this.Provider = provider;
         }
 
         public void SetDefaultNavigation(SimpleViewModel navigationObject, bool forceIfProviderEmpty = false)
@@ -50,14 +52,9 @@ namespace SimpleWPF.Core.Navigation
 
             if(forceIfProviderEmpty)
             {
-                if (provider != null)
-                    provider.Current = navigationObject;
+                if (Provider != null)
+                    Provider.Current = navigationObject;
             }
-        }
-
-        public ISimpleNavigationHandler GetProvider()
-        {
-            return provider;
         }
     }
 }

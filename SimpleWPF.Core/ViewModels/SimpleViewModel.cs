@@ -16,8 +16,7 @@ namespace SimpleWPF.Core.ViewModels
         public SimpleViewModel()
         {
             if(service == null)
-                service = SimpleSingleton
-                    .GetSingleton<SimpleNavigationService>();
+                service = SimpleNavigationService.Instance;
 
             if(Cache == null)
                 Cache = new Dictionary<string, object>();
