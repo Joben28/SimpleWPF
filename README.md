@@ -4,13 +4,13 @@ SimpleWPF implements navigation through utilizing data templating. You can eithe
 
 ## STEP 1: Setting up ApplicationViewModel
 
-Typically to get started for navigation, you want to do some simple setup in your applications `App.xaml.cs`. However, before doing this you must create an `ApplicationViewModel` which will be the provider of the navigation service. This view model must implement the `ISimpleNavigationHandler` interface and it will hold the navigations *current* view model instance, as well as the current view models *window* (If, as you will see later, you use the SimpleWindow).
+Typically to get started for navigation, you want to do some simple setup in your applications `App.xaml.cs`. However, before doing this you must create an `ApplicationViewModel` which will be the provider of the navigation service. This view model must implement the `ISimpleNavigationProvider` interface and it will hold the navigations *current* view model instance, as well as the current view models *window* (If, as you will see later, you use the SimpleWindow).
 
 It also would be neccessary to setup the interface properties to handle property change notification. You can do this by using the `SimpleViewModel` as the base class. 
 
 *AppViewModel Example:*
 ````C#
-    public class AppViewModel : SimpleViewModel, ISimpleNavigationHandler
+    public class AppViewModel : SimpleViewModel, ISimpleNavigationProvider
     {
         private SimpleViewModel current;
         public SimpleViewModel Current
@@ -66,7 +66,7 @@ You may be curious as to what exactly is going on here:
 core.Startup(new AppViewModel(), new BlueViewModel(), true);
 ````
 
-Here we are registering our `AppViewModel` to our navigation service. This is why we needed the handler interface earlier. However, sometimes you would like to instantiate a default view for failed navigations, or you would like to simply force a startup view. In the example, `BlueViewModel` is set as a default navigation object, and the boolean tells it that we want to force this default view on startup. So when we launch the application, the view for `BlueViewModel` is the first thing the user will see.
+Here we are registering our `AppViewModel` to our navigation service. This is why we needed the provider interface earlier. However, sometimes you would like to instantiate a default view for failed navigations, or you would like to simply force a startup view. In the example, `BlueViewModel` is set as a default navigation object, and the boolean tells it that we want to force this default view on startup. So when we launch the application, the view for `BlueViewModel` is the first thing the user will see.
 
 # STEP 3: Setting up the Window
 
@@ -111,9 +111,7 @@ An alternative would be to simply setup the data context in your `MainWindow` co
 ````C#
         public MainWindow()
         {
-            var provider = SimpleSingleton
-                .GetSingleton<SimpleNavigationService>()
-                .GetProvider();
+            var provider = SimpleNavigationService.Instance.Provider;
 
             DataContext = provider;
         }
