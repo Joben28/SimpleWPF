@@ -19,6 +19,9 @@ namespace SimpleWPF.Core.ViewModels
 
         public void OnPropertyChanged<T>(ref T property, T value, [CallerMemberName] string propertyName = "")
         {
+            if(Equals(property, value))
+                return;
+
             property = value;
             var handler = PropertyChanged;
             if (handler != null)

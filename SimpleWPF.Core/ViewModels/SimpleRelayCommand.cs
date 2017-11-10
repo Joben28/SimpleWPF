@@ -14,10 +14,7 @@ namespace SimpleWPF.Core.ViewModels
 
         public SimpleRelayCommand(Action<object> execute, Predicate<object> canExecute)
         {
-            if (execute == null)
-                throw new NullReferenceException("execute");
-
-            _execute = execute;
+            _execute = execute ?? throw new ArgumentNullException(nameof(execute));
             _canExecute = canExecute;
         }
 

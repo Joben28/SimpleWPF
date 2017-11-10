@@ -7,22 +7,16 @@ using System.Windows.Input;
 
 namespace SimpleWPF.Core.ViewModels
 {
-    public class SimpleGenericRelayCommand<T> : ICommand
+    public class SimpleRelayCommand<T> : ICommand
     {
-        #region Fields
-
         private readonly Action<T> _execute = null;
         private readonly Predicate<T> _canExecute = null;
-
-        #endregion
-
-        #region Constructors
 
         /// <summary>
                 /// Creates a new command that can always execute.
                 /// </summary>
                 /// <param name="execute">The execution logic.</param>
-        public SimpleGenericRelayCommand(Action<T> execute) : this(execute, null)
+        public SimpleRelayCommand(Action<T> execute) : this(execute, null)
         {
         }
 
@@ -31,18 +25,11 @@ namespace SimpleWPF.Core.ViewModels
                 /// </summary>
                 /// <param name="execute">The execution logic.</param>
                 /// <param name="canExecute">The execution status logic.</param>
-        public SimpleGenericRelayCommand(Action<T> execute, Predicate<T> canExecute)
+        public SimpleRelayCommand(Action<T> execute, Predicate<T> canExecute)
         {
-            if (execute == null)
-                throw new ArgumentNullException("execute");
-
-            _execute = execute;
+            _execute = execute ?? throw new ArgumentNullException(nameof(execute));
             _canExecute = canExecute;
         }
-
-        #endregion
-
-        #region ICommand Members
 
         public bool CanExecute(object parameter)
         {
@@ -67,7 +54,5 @@ namespace SimpleWPF.Core.ViewModels
         {
             _execute((T)parameter);
         }
-
-        #endregion
     }
 }
