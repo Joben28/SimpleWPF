@@ -47,6 +47,7 @@
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Core\SimpleCore.cs" />
     <Compile Include="Core\SimpleDataTemplateManager.cs" />
+    <Compile Include="Navigation\Arguments\NavigationEventArgs.cs" />
     <Compile Include="Navigation\ISimpleNavigationProvider.cs" />
     <Compile Include="Navigation\ISimpleWindow.cs" />
     <Compile Include="Navigation\SimpleNavigationService.cs" />
