@@ -94,7 +94,7 @@ First, we need to goto our `MainWindow.xaml` and provide a namespace for our Sim
         Title="MainWindow" Height="350" Width="525">
 ````
 
-**You likely will see an error** stating: `Partial declaration must not specify different base classes`, or you may just simply recieve a crash on launch. In order to fix this, we need to jump to our `MainWindow` code-behind, and remove the base class `Window`.
+**You likely will see an error** stating: `Partial declaration must not specify different base classes`, or you may just simply recieve a crash on launch. In order to fix this, we need to jump to our `MainWindow` code-behind, and remove the base class `Window`. **Also, keep in mind you will need to add the appropriate namespace for SimpleWindow in your MainWindow code-behind.**
 
 *Example of Window code-behind*
 ````C#
