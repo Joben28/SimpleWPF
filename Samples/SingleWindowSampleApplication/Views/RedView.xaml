@@ -8,6 +8,9 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Background="Red">
         <StackPanel Width="100" Height="100">
+            <Button Command="{Binding GotoBackCommand}">
+                Go Back
+            </Button>
             <Button Command="{Binding GotoBlueCommand}">
                 Goto Blue
             </Button>
