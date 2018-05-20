@@ -31,6 +31,9 @@ namespace SimpleWPF.Core.Navigation
 
         public void Navigate(SimpleViewModel navObject)
         {
+            if (Provider == null)
+                throw new NullReferenceException("The navigation service does not have a registered 'ISimpleNavigationProvider'");
+
             var args = new NavigationEventArgs(navObject, Provider.Current);
 
             OnBeforeNavigate(this, args);
@@ -52,6 +55,9 @@ namespace SimpleWPF.Core.Navigation
 
         public void NavigateWithNewWindow(SimpleViewModel navObject, ISimpleWindow newWindow)
         {
+            if (Provider == null)
+                throw new NullReferenceException("The navigation service does not have a registered 'ISimpleNavigationProvider'");
+
             var args = new WindowEventArgs(newWindow, Provider.Window);
 
             Navigate(navObject);
