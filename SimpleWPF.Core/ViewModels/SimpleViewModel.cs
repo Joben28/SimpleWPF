@@ -30,7 +30,7 @@ namespace SimpleWPF.Core.ViewModels
             service.Navigate(navigationObject);
         }
 
-        public virtual void NavigateWindow(SimpleViewModel navObject, ISimpleWindow newWindow)
+        protected virtual void NavigateWindow(SimpleViewModel navObject, ISimpleWindow newWindow)
         {
             service.NavigateWithNewWindow(navObject, newWindow);
         }

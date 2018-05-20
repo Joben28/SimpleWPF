@@ -28,7 +28,7 @@ namespace MultiWindowSampleApplication.ViewModels
             base.Navigate(navigationObject);
         }
 
-        public override void NavigateWindow(SimpleViewModel navObject, ISimpleWindow newWindow)
+        protected override void NavigateWindow(SimpleViewModel navObject, ISimpleWindow newWindow)
         {
             if (navObject is AuthorizedViewModel authVM)
             {
