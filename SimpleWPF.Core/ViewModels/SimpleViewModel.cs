@@ -35,6 +35,11 @@ namespace SimpleWPF.Core.ViewModels
             service.NavigateWithNewWindow(navObject, newWindow);
         }
 
+        protected virtual void NavigateBack()
+        {
+            service.NavigateToPrevious();
+        }
+
         protected T GetCacheObject<T>(string key)
         {
             return (T)Cache.FirstOrDefault(x => x.Key == key).Value;

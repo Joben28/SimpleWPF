@@ -24,9 +24,6 @@ namespace SimpleWPF.Core.Navigation
         private event BeforeClosingEventHandler BeforeClosing;
         private event AfterClosingEventHandler AfterClosing;
 
-
-
-
         private SimpleNavigationService()
         {
 
@@ -62,6 +59,15 @@ namespace SimpleWPF.Core.Navigation
             OnBeforeClosing(this, args);
             Provider.Window.TransitionWindow(newWindow);
             OnAfterClosing(this, args);
+        }
+
+        public void NavigateToPrevious()
+        {
+            if (NavigationHistory.Count <= 0)
+                throw new Exception("There is no previous element to navigate");
+
+            var previousNavigation = NavigationHistory[NavigationHistory.Count-1];
+            Navigate(previousNavigation);
         }
 
         public void RegisterProvider(ISimpleNavigationProvider provider)

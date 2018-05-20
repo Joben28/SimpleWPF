@@ -26,7 +26,7 @@ namespace SingleWindowSampleApplication.ViewModels
 
         private void GotoBlue()
         {
-            Navigate(new BlueViewModel());
+            NavigateBack();
         }
     }
 }
