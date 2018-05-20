@@ -82,14 +82,6 @@ namespace SimpleWPF.Core.Navigation
             }
         }
 
-        private void AddToHistory(SimpleViewModel navObj)
-        {
-            if (NavigationHistory.Count >= MaxHistoryObjects)
-                NavigationHistory.RemoveAt(0);
-
-            NavigationHistory.Add(navObj);
-        }
-
         public void OnBeforeNavigate(object sender, NavigationEventArgs e)
         {
             BeforeNavigation?.Invoke(this, e);
@@ -108,6 +100,14 @@ namespace SimpleWPF.Core.Navigation
         public void OnAfterClosing(object sender, WindowEventArgs e)
         {
             AfterClosing?.Invoke(this, e);
+        }
+
+        private void AddToHistory(SimpleViewModel navObj)
+        {
+            if (NavigationHistory.Count >= MaxHistoryObjects)
+                NavigationHistory.RemoveAt(0);
+
+            NavigationHistory.Add(navObj);
         }
     }
 }
