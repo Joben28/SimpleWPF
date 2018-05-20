@@ -24,9 +24,6 @@ namespace SimpleWPF.Core.ViewModels
 
         protected virtual void Navigate(SimpleViewModel navigationObject)
         {
-            if (service == null)
-                throw new NullReferenceException("A 'SimpleNavigationService' has not been provided.");
-            //gg
             service.Navigate(navigationObject);
         }
 
