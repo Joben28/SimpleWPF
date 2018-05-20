@@ -24,10 +24,7 @@ namespace SimpleWPF.Core.Navigation
         private event BeforeClosingEventHandler BeforeClosing;
         private event AfterClosingEventHandler AfterClosing;
 
-        private SimpleNavigationService()
-        {
-
-        }
+        private SimpleNavigationService() { }
 
         public void Navigate(SimpleViewModel navObject)
         {
@@ -39,14 +36,7 @@ namespace SimpleWPF.Core.Navigation
             OnBeforeNavigate(this, args);
 
             if (Provider.Current != null && Provider.Current != navObject)
-            {
-                if (NavigationHistory.Count >= MaxHistoryObjects)
-                {
-                    NavigationHistory.RemoveAt(0);
-                }
-
-                NavigationHistory.Add(Provider.Current);
-            }
+                AddToHistory(Provider.Current);
 
             Provider.Current = navObject;
 
@@ -90,6 +80,14 @@ namespace SimpleWPF.Core.Navigation
                 if (Provider != null)
                     Provider.Current = navigationObject;
             }
+        }
+
+        private void AddToHistory(SimpleViewModel navObj)
+        {
+            if (NavigationHistory.Count >= MaxHistoryObjects)
+                NavigationHistory.RemoveAt(0);
+
+            NavigationHistory.Add(navObj);
         }
 
         public void OnBeforeNavigate(object sender, NavigationEventArgs e)
