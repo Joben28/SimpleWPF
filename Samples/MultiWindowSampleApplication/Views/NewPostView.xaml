@@ -1,35 +1,35 @@
 ﻿<UserControl x:Class="MultiWindowSampleApplication.Views.NewPostView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:MultiWindowSampleApplication.Views"
              xmlns:core="clr-namespace:SimpleWPF.Core.Core;assembly=SimpleWPF.Core"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Background="#FFF7F7F7">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.ColumnSpan="3">
             <Label>Title</Label>
-            <TextBox Margin="5" 
-                     Text="{Binding Post.Title, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Margin="5"
+                     Text="{Binding Post.Title, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
 
         <DockPanel Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3">
             <Label DockPanel.Dock="Top">Body</Label>
-            <TextBox AcceptsReturn="True" Margin="5" 
-                     Text="{Binding Post.Content, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox AcceptsReturn="True" Margin="5"
+                     Text="{Binding Post.Content, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" />
         </DockPanel>
 
         <StackPanel Grid.Row="3" Grid.Column="2">

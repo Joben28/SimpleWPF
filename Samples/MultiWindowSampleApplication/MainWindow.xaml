@@ -9,8 +9,8 @@
         Title="Testing" Height="350" Width="525">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <StackPanel Width="100">
             <Button Command="{Binding HomeCommand}">Home</Button>

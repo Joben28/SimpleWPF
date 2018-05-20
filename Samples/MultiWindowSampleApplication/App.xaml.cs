@@ -1,12 +1,5 @@
 ﻿using MultiWindowSampleApplication.ViewModels;
 using SimpleWPF.Core.Core;
-using SimpleWPF.Core.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace MultiWindowSampleApplication

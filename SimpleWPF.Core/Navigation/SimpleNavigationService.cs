@@ -1,12 +1,7 @@
-﻿using SimpleWPF.Core.Core;
-using SimpleWPF.Core.Navigation.Arguments;
+﻿using SimpleWPF.Core.Navigation.Arguments;
 using SimpleWPF.Core.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleWPF.Core.Navigation
 {
@@ -20,11 +15,16 @@ namespace SimpleWPF.Core.Navigation
         public int MaxHistoryObjects { get; set; } = 5;
 
         private event BeforeNavigationEventHandler BeforeNavigation;
+
         private event AfterNavigationEventHandler AfterNavigation;
+
         private event BeforeClosingEventHandler BeforeClosing;
+
         private event AfterClosingEventHandler AfterClosing;
 
-        private SimpleNavigationService() { }
+        private SimpleNavigationService()
+        {
+        }
 
         public void Navigate(SimpleViewModel navObject)
         {
@@ -62,7 +62,7 @@ namespace SimpleWPF.Core.Navigation
             if (NavigationHistory.Count <= 0)
                 throw new Exception("There is no previous element to navigate");
 
-            var previousNavigation = NavigationHistory[NavigationHistory.Count-1];
+            var previousNavigation = NavigationHistory[NavigationHistory.Count - 1];
             Navigate(previousNavigation);
         }
 
@@ -75,7 +75,7 @@ namespace SimpleWPF.Core.Navigation
         {
             DefaultNavigation = navigationObject;
 
-            if(forceIfProviderEmpty)
+            if (forceIfProviderEmpty)
             {
                 if (Provider != null)
                     Provider.Current = navigationObject;

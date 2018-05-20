@@ -1,13 +1,6 @@
-﻿using SimpleWPF.Core.Core;
-using SimpleWPF.Core.Navigation;
+﻿using SimpleWPF.Core.Navigation;
 using SimpleWPF.Core.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
-using System.Windows.Navigation;
 
 namespace MultiWindowSampleApplication.ViewModels
 {
@@ -16,6 +9,7 @@ namespace MultiWindowSampleApplication.ViewModels
         public ICommand HomeCommand { get; set; }
 
         private SimpleViewModel current;
+
         public SimpleViewModel Current
         {
             get { return current; }
@@ -26,6 +20,7 @@ namespace MultiWindowSampleApplication.ViewModels
         }
 
         private ISimpleWindow window;
+
         public ISimpleWindow Window
         {
             get { return window; }
@@ -34,7 +29,6 @@ namespace MultiWindowSampleApplication.ViewModels
                 OnPropertyChanged(ref window, value);
             }
         }
-
 
         public AppViewModel()
         {

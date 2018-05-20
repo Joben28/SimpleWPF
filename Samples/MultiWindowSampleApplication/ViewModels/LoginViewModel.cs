@@ -1,12 +1,5 @@
 ﻿using MultiWindowSampleApplication.Models;
-using SimpleWPF.Core.Core;
-using SimpleWPF.Core.Navigation;
 using SimpleWPF.Core.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using TestingApplication.Models.Cache;
 
@@ -29,7 +22,7 @@ namespace MultiWindowSampleApplication
             AddCacheObject("auth", auth);
             AddCacheObject("user", account);
 
-            NavigateWindow(new NewPostViewModel(), new MainWindow());         
+            NavigateWindow(new NewPostViewModel(), new MainWindow());
         }
     }
 }

@@ -1,12 +1,5 @@
 ﻿using SimpleWPF.Core.Core;
 using SingleWindowSampleApplication.ViewModels;
-using SingleWindowSampleApplication.Views;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace SingleWindowSampleApplication
@@ -22,7 +15,7 @@ namespace SingleWindowSampleApplication
 
             SimpleCore core = new SimpleCore();
 
-            //The 2nd and 3rd parameters are optional. 
+            //The 2nd and 3rd parameters are optional.
             //2nd: Sets a default viewmodel.
             //3rd: Force auto-navigate to default on startup.
             core.Startup(new AppViewModel(), new BlueViewModel(), true);

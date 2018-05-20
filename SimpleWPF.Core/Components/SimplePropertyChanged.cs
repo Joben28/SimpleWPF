@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SimpleWPF.Core.ViewModels
+namespace SimpleWPF.Core.Components
 {
     public class SimplePropertyChanged : INotifyPropertyChanged
     {

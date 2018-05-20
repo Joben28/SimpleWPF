@@ -53,9 +53,10 @@
     <Compile Include="Navigation\SimpleNavigationService.cs" />
     <Compile Include="Navigation\SimpleWindow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\SimpleRelayCommand.cs" />
+    <Compile Include="Input\SimpleRelayCommand.cs" />
+    <Compile Include="ViewModels\SimpleProviderViewModel.cs" />
     <Compile Include="ViewModels\SimpleViewModel.cs" />
-    <Compile Include="ViewModels\SimplePropertyChanged.cs" />
+    <Compile Include="Components\SimplePropertyChanged.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

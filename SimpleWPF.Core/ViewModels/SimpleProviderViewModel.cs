@@ -1,9 +1,8 @@
 ﻿using SimpleWPF.Core.Navigation;
-using SimpleWPF.Core.ViewModels;
 
-namespace SingleWindowSampleApplication.ViewModels
+namespace SimpleWPF.Core.ViewModels
 {
-    public class AppViewModel : SimpleViewModel, ISimpleNavigationProvider
+    public class SimpleProviderViewModel : SimpleViewModel, ISimpleNavigationProvider
     {
         private SimpleViewModel current;
 

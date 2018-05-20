@@ -1,10 +1,7 @@
-﻿using SimpleWPF.Core.Core;
+﻿using SimpleWPF.Core.Components;
 using SimpleWPF.Core.Navigation;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleWPF.Core.ViewModels
 {
@@ -15,10 +12,10 @@ namespace SimpleWPF.Core.ViewModels
 
         public SimpleViewModel()
         {
-            if(service == null)
+            if (service == null)
                 service = SimpleNavigationService.Instance;
 
-            if(Cache == null)
+            if (Cache == null)
                 Cache = new Dictionary<string, object>();
         }
 

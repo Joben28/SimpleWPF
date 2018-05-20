@@ -1,11 +1,6 @@
-﻿using SimpleWPF.Core.ViewModels;
+﻿using SimpleWPF.Core.Navigation;
+using SimpleWPF.Core.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SimpleWPF.Core.Navigation;
-using MultiWindowSampleApplication.Models;
 using TestingApplication.Models.Cache;
 
 namespace MultiWindowSampleApplication.ViewModels
@@ -14,9 +9,9 @@ namespace MultiWindowSampleApplication.ViewModels
     {
         protected override void Navigate(SimpleViewModel navigationObject)
         {
-            if(navigationObject is AuthorizedViewModel authVM)
+            if (navigationObject is AuthorizedViewModel authVM)
             {
-                if(VerifyNavigation(authVM))
+                if (VerifyNavigation(authVM))
                 {
                     base.Navigate(navigationObject);
                     return;
@@ -49,7 +44,7 @@ namespace MultiWindowSampleApplication.ViewModels
             var token = GetCacheObject<AuthCache>("auth");
             if (token != null)
             {
-                if(token.Timeout >= DateTime.Now)
+                if (token.Timeout >= DateTime.Now)
                 {
                     return true;
                 }
