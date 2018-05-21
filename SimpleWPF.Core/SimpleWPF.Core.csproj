@@ -47,6 +47,10 @@
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Core\SimpleCore.cs" />
     <Compile Include="Core\SimpleDataTemplateManager.cs" />
+    <Compile Include="Input\AsyncNotificationStatus.cs" />
+    <Compile Include="Input\ISimpleAsyncCommand.cs" />
+    <Compile Include="Input\SimpleAsyncCommand.cs" />
+    <Compile Include="Input\SimpleAsyncCommandMonitor.cs" />
     <Compile Include="Navigation\Arguments\NavigationEventArgs.cs" />
     <Compile Include="Navigation\ISimpleNavigationProvider.cs" />
     <Compile Include="Navigation\ISimpleWindow.cs" />
