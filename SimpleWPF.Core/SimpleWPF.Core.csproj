@@ -60,7 +60,7 @@
     <Compile Include="Input\SimpleRelayCommand.cs" />
     <Compile Include="ViewModels\SimpleProviderViewModel.cs" />
     <Compile Include="ViewModels\SimpleViewModel.cs" />
-    <Compile Include="Components\SimplePropertyChanged.cs" />
+    <Compile Include="Components\SimpleObservableObject.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

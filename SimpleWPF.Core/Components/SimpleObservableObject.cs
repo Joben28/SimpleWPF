@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace SimpleWPF.Core.Components
 {
-    public class SimplePropertyChanged : INotifyPropertyChanged
+    public class SimpleObservableObject : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

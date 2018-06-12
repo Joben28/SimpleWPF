@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SimpleWPF.Core.Input
 {
-    public class SimpleAsyncCommandMonitor : SimplePropertyChanged
+    public class SimpleAsyncCommandMonitor : SimpleObservableObject
     {
         private Task _commandTask;
         private CancellationTokenSource _tokenSource;

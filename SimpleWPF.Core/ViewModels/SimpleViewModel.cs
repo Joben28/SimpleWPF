@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace SimpleWPF.Core.ViewModels
 {
-    public class SimpleViewModel : SimplePropertyChanged
+    public class SimpleViewModel : SimpleObservableObject
     {
         protected static Dictionary<string, object> Cache { get; private set; }
         protected SimpleNavigationService service { get; private set; }
