@@ -1,4 +1,5 @@
 ﻿using MultiWindowSampleApplication.Models;
+using SimpleWPF.Core.Input;
 using SimpleWPF.Core.ViewModels;
 using System.Windows.Input;
 using TestingApplication.Models.Cache;

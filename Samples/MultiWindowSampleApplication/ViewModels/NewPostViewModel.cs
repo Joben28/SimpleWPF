@@ -1,5 +1,6 @@
 ﻿using MultiWindowSampleApplication.Models;
 using MultiWindowSampleApplication.ViewModels;
+using SimpleWPF.Core.Input;
 using System.Windows.Input;
 
 namespace MultiWindowSampleApplication

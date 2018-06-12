@@ -1,4 +1,5 @@
-﻿using SimpleWPF.Core.ViewModels;
+﻿using SimpleWPF.Core.Input;
+using SimpleWPF.Core.ViewModels;
 using System.Windows.Input;
 
 namespace SingleWindowSampleApplication.ViewModels

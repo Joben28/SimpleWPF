@@ -1,4 +1,5 @@
-﻿using SimpleWPF.Core.Navigation;
+﻿using SimpleWPF.Core.Input;
+using SimpleWPF.Core.Navigation;
 using SimpleWPF.Core.ViewModels;
 using System.Windows.Input;
 

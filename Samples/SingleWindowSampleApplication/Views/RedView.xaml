@@ -17,6 +17,7 @@
             <Button Command="{Binding GotoYellowCommand}">
                 Goto Yellow
             </Button>
+            <TextBox/>
         </StackPanel>
     </Grid>
 </UserControl>

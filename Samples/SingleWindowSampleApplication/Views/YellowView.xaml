@@ -4,11 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:SingleWindowSampleApplication.Views"
+             xmlns:vm="clr-namespace:SingleWindowSampleApplication.ViewModels"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Background="Yellow">
         <StackPanel Width="100" Height="100">
-            <Button Command="{Binding GotoRedCommand}">
+            <Button Command="{Binding NavCommand}" CommandParameter="{x:Type vm:RedViewModel}">
                 Goto Red
             </Button>
         </StackPanel>
