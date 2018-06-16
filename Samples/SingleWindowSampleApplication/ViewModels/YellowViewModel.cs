@@ -7,11 +7,14 @@ namespace SingleWindowSampleApplication.ViewModels
 {
     public class YellowViewModel : SimpleViewModel
     {
+        private SimpleViewModel _redViewModel;
+
         public ICommand GotoRedCommand { get; set; }
         public ICommand NavCommand { get; set; }
 
-        public YellowViewModel()
+        public YellowViewModel(SimpleViewModel redViewModel)
         {
+            _redViewModel = redViewModel;
             GotoRedCommand = new SimpleRelayCommand(GotoRed);
             NavCommand = new SimpleRelayCommand<Type>(Nav);
         }
@@ -23,7 +26,7 @@ namespace SingleWindowSampleApplication.ViewModels
 
         private void GotoRed()
         {
-            Navigate(new RedViewModel());
+            Navigate(_redViewModel);
         }
     }
 }
