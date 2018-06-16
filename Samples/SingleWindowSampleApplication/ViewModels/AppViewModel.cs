@@ -1,4 +1,6 @@
-﻿using SimpleWPF.Core.Navigation;
+﻿using System;
+using SimpleWPF.Core.Navigation;
+using SimpleWPF.Core.Navigation.Arguments;
 using SimpleWPF.Core.ViewModels;
 
 namespace SingleWindowSampleApplication.ViewModels
@@ -19,6 +21,16 @@ namespace SingleWindowSampleApplication.ViewModels
         {
             get { return window; }
             set { OnPropertyChanged(ref window, value); }
+        }
+
+        public AppViewModel()
+        {
+            service.BeforeNavigation += OnBeforeNavigation;
+        }
+
+        private void OnBeforeNavigation(object sender, NavigationEventArgs e)
+        {
+            Console.WriteLine("About to navigate!");
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using SimpleWPF.Core.Components;
 using SimpleWPF.Core.Navigation;
+using SimpleWPF.Core.Navigation.Arguments;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 

@@ -14,13 +14,13 @@ namespace SimpleWPF.Core.Navigation
         public SimpleViewModel DefaultNavigation { get; private set; }
         public int MaxHistoryObjects { get; set; } = 5;
 
-        private event BeforeNavigationEventHandler BeforeNavigation;
+        public event BeforeNavigationEventHandler BeforeNavigation;
 
-        private event AfterNavigationEventHandler AfterNavigation;
+        public event AfterNavigationEventHandler AfterNavigation;
 
-        private event BeforeClosingEventHandler BeforeClosing;
+        public event BeforeClosingEventHandler BeforeClosing;
 
-        private event AfterClosingEventHandler AfterClosing;
+        public event AfterClosingEventHandler AfterClosing;
 
         private SimpleNavigationService()
         {
