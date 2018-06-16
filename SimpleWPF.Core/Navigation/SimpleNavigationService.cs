@@ -82,22 +82,22 @@ namespace SimpleWPF.Core.Navigation
             }
         }
 
-        public void OnBeforeNavigate(object sender, NavigationEventArgs e)
+        private void OnBeforeNavigate(object sender, NavigationEventArgs e)
         {
             BeforeNavigation?.Invoke(this, e);
         }
 
-        public void OnAfterNavigate(object sender, NavigationEventArgs e)
+        private void OnAfterNavigate(object sender, NavigationEventArgs e)
         {
             AfterNavigation?.Invoke(this, e);
         }
 
-        public void OnBeforeClosing(object sender, WindowEventArgs e)
+        private void OnBeforeClosing(object sender, WindowEventArgs e)
         {
             BeforeClosing?.Invoke(this, e);
         }
 
-        public void OnAfterClosing(object sender, WindowEventArgs e)
+        private void OnAfterClosing(object sender, WindowEventArgs e)
         {
             AfterClosing?.Invoke(this, e);
         }
