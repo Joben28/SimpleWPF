@@ -41,9 +41,17 @@ namespace SimpleWPF.Core.Input
                 while (_isMonitoring)
                 {
                     if (_commandTask.Status == TaskStatus.RanToCompletion)
+                    {
                         Status = AsyncNotificationStatus.Complete;
+                        _isMonitoring = false;
+                        break;
+                    }
                     else if (_commandTask.Status == TaskStatus.Faulted)
+                    {
                         Status = AsyncNotificationStatus.Error;
+                        _isMonitoring = false;
+                        break;
+                    }
                     else if (_tokenSource.IsCancellationRequested)
                     {
                         Status = AsyncNotificationStatus.Canceled;
