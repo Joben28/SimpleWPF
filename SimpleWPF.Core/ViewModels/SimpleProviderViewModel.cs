@@ -2,6 +2,9 @@
 
 namespace SimpleWPF.Core.ViewModels
 {
+    /// <summary>
+    /// A base provider for the navigation service
+    /// </summary>
     public class SimpleProviderViewModel : SimpleViewModel, ISimpleNavigationProvider
     {
         private SimpleViewModel current;

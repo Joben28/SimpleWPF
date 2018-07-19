@@ -13,7 +13,14 @@ namespace SimpleWPF.Core.Navigation.Arguments
 
     public class NavigationEventArgs : EventArgs
     {
+        /// <summary>
+        /// ViewModel being navigated to
+        /// </summary>
         public SimpleViewModel ViewModelTo { get; private set; }
+
+        /// <summary>
+        /// ViewModel being navigated from
+        /// </summary>
         public SimpleViewModel ViewModelFrom { get; private set; }
 
         public NavigationEventArgs()
@@ -29,7 +36,14 @@ namespace SimpleWPF.Core.Navigation.Arguments
 
     public class WindowEventArgs : EventArgs
     {
+        /// <summary>
+        /// Window to be navigated to
+        /// </summary>
         public ISimpleWindow WindowTo { get; private set; }
+
+        /// <summary>
+        /// Window being navigated from
+        /// </summary>
         public ISimpleWindow WindowFrom { get; private set; }
 
         public WindowEventArgs()

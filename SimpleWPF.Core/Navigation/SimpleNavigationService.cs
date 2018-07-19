@@ -5,13 +5,24 @@ using System.Collections.ObjectModel;
 
 namespace SimpleWPF.Core.Navigation
 {
+    /// <summary>
+    /// Handles the application navigation
+    /// </summary>
     public sealed class SimpleNavigationService
     {
         public static readonly SimpleNavigationService Instance = new SimpleNavigationService();
 
+        /// <summary>
+        /// Collection of past navigation calls
+        /// </summary>
         public ObservableCollection<SimpleViewModel> NavigationHistory { get; private set; } = new ObservableCollection<SimpleViewModel>();
+
         public ISimpleNavigationProvider Provider { get; private set; }
         public SimpleViewModel DefaultNavigation { get; private set; }
+
+        /// <summary>
+        /// Maximum number of objects to hold in history collection
+        /// </summary>
         public int MaxHistoryObjects { get; set; } = 5;
 
         public event BeforeNavigationEventHandler BeforeNavigation;
@@ -26,6 +37,10 @@ namespace SimpleWPF.Core.Navigation
         {
         }
 
+        /// <summary>
+        /// Navigate to ViewModel
+        /// </summary>
+        /// <param name="navObject">ViewModel to navigate to</param>
         public void Navigate(SimpleViewModel navObject)
         {
             if (Provider == null)
@@ -43,6 +58,11 @@ namespace SimpleWPF.Core.Navigation
             OnAfterNavigate(this, args);
         }
 
+        /// <summary>
+        /// Navigate to a ViewModel with a new window
+        /// </summary>
+        /// <param name="navObject">ViewModel to navigate to</param>
+        /// <param name="newWindow">Window to navigate to</param>
         public void NavigateWithNewWindow(SimpleViewModel navObject, ISimpleWindow newWindow)
         {
             if (Provider == null)
@@ -57,6 +77,9 @@ namespace SimpleWPF.Core.Navigation
             OnAfterClosing(this, args);
         }
 
+        /// <summary>
+        /// Navigate to the previous object in history
+        /// </summary>
         public void NavigateToPrevious()
         {
             if (NavigationHistory.Count <= 0)
@@ -66,11 +89,20 @@ namespace SimpleWPF.Core.Navigation
             Navigate(previousNavigation);
         }
 
+        /// <summary>
+        /// Register the provider that contains current view
+        /// </summary>
+        /// <param name="provider"></param>
         public void RegisterProvider(ISimpleNavigationProvider provider)
         {
             this.Provider = provider;
         }
 
+        /// <summary>
+        /// Set the ViewModel navigation defaults to
+        /// </summary>
+        /// <param name="navigationObject"></param>
+        /// <param name="forceIfProviderEmpty"></param>
         public void SetDefaultNavigation(SimpleViewModel navigationObject, bool forceIfProviderEmpty = false)
         {
             DefaultNavigation = navigationObject;

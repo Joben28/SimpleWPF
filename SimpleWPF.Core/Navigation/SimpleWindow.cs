@@ -2,6 +2,9 @@
 
 namespace SimpleWPF.Core.Navigation
 {
+    /// <summary>
+    /// Base for navigation window
+    /// </summary>
     public class SimpleWindow : Window, ISimpleWindow
     {
         private ISimpleNavigationProvider provider;

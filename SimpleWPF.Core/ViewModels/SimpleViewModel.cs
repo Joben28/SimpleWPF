@@ -7,6 +7,9 @@ using System.Linq;
 
 namespace SimpleWPF.Core.ViewModels
 {
+    /// <summary>
+    /// Base for ViewModels that implements property notification and navigation
+    /// </summary>
     public class SimpleViewModel : SimpleObservableObject
     {
         protected static Dictionary<string, object> Cache { get; private set; }
@@ -44,6 +47,18 @@ namespace SimpleWPF.Core.ViewModels
         protected void AddCacheObject(string key, object cacheObject)
         {
             Cache.Add(key, cacheObject);
+            OnPropertyChanged("Chache");
+        }
+
+        protected void AddOrUpdateCacheObject(string key, object cacheObject)
+        {
+            if (!Cache.ContainsKey(key))
+            {
+                AddCacheObject(key, cacheObject);
+                return;
+            }
+
+            Cache[key] = cacheObject;
             OnPropertyChanged("Chache");
         }
 

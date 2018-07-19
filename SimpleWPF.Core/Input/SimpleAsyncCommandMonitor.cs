@@ -16,6 +16,9 @@ namespace SimpleWPF.Core.Input
         private bool _isMonitoring;
 
         private AsyncNotificationStatus _status;
+        /// <summary>
+        /// Status of the current command being monitored
+        /// </summary>
         public AsyncNotificationStatus Status
         {
             get { return _status; }
@@ -26,16 +29,24 @@ namespace SimpleWPF.Core.Input
             }
         }
 
+        /// <summary>
+        /// Monitor the status of the command task
+        /// </summary>
+        /// <param name="commandTask">Commands task to complete</param>
         public async void MonitorTask(Task commandTask)
         {
+            //Setup monitor
             _commandTask = commandTask;
             _isMonitoring = true;
 
+            //Setup cancellation token
             _tokenSource = new CancellationTokenSource();
             _token = _tokenSource.Token;
 
+            //Mark status as busy before start
             Status = AsyncNotificationStatus.Busy;
 
+            //Start the task
             await Task.Factory.StartNew(() =>
             {
                 while (_isMonitoring)
@@ -64,6 +75,9 @@ namespace SimpleWPF.Core.Input
             }, _token);
         }
 
+        /// <summary>
+        /// Cancel the monitoring of the command
+        /// </summary>
         public void CancelMonitor()
         {
             if (_tokenSource != null)

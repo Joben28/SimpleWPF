@@ -7,9 +7,16 @@ using System.Windows.Input;
 
 namespace SimpleWPF.Core.Input
 {
+    /// <summary>
+    /// An async command implementation
+    /// </summary>
     public class SimpleAsyncCommand : ISimpleAsyncCommand
     {
+        /// <summary>
+        /// Monitor for the commands current status
+        /// </summary>
         public SimpleAsyncCommandMonitor CommandMonitor { get; private set; }
+
         public bool IsCanceled { get; private set; }
 
         private Func<object, Task> _execute;

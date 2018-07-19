@@ -3,6 +3,10 @@ using System.Windows.Input;
 
 namespace SimpleWPF.Core.Input
 {
+    /// <summary>
+    /// A command implementation
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class SimpleRelayCommand<T> : ICommand
     {
         private readonly Action<T> _execute = null;
