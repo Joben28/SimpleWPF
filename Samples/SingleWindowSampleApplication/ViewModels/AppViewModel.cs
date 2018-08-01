@@ -1,7 +1,7 @@
 ﻿using System;
-using SimpleWPF.Core.Navigation;
-using SimpleWPF.Core.Navigation.Arguments;
-using SimpleWPF.Core.ViewModels;
+using SimpleWPF.Navigation;
+using SimpleWPF.Navigation.Arguments;
+using SimpleWPF.ViewModels;
 
 namespace SingleWindowSampleApplication.ViewModels
 {

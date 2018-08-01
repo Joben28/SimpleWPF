@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace SimpleWPF.Core.Input
+namespace SimpleWPF.Input
 {
     /// <summary>
     /// A command implementation

@@ -1,11 +1,11 @@
-﻿using SimpleWPF.Core.Components;
-using SimpleWPF.Core.Navigation;
-using SimpleWPF.Core.Navigation.Arguments;
+﻿using SimpleWPF.Components;
+using SimpleWPF.Navigation;
+using SimpleWPF.Navigation.Arguments;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SimpleWPF.Core.ViewModels
+namespace SimpleWPF.ViewModels
 {
     /// <summary>
     /// Base for ViewModels that implements property notification and navigation

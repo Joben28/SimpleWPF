@@ -1,5 +1,5 @@
 ﻿using NavigationCacheSampleApplication.ViewModels;
-using SimpleWPF.Core.Core;
+using SimpleWPF.Core;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

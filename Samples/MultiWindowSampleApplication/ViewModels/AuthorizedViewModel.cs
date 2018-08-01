@@ -1,5 +1,5 @@
-﻿using SimpleWPF.Core.Navigation;
-using SimpleWPF.Core.ViewModels;
+﻿using SimpleWPF.Navigation;
+using SimpleWPF.ViewModels;
 using System;
 using TestingApplication.Models.Cache;
 

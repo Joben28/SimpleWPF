@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWPF.Core", "SimpleWPF.Core\SimpleWPF.Core.csproj", "{C4239BF9-8454-4FA9-B86F-2BB679B77EFB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWPF", "SimpleWPF.Core\SimpleWPF.csproj", "{C4239BF9-8454-4FA9-B86F-2BB679B77EFB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{3D2F4D66-E021-4C72-AB01-30E2AF59D52D}"
 EndProject

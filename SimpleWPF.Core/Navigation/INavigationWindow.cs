@@ -1,4 +1,4 @@
-﻿namespace SimpleWPF.Core.Navigation
+﻿namespace SimpleWPF.Navigation
 {
     public interface INavigationWindow
     {

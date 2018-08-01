@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package  xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>    
+    <id>SimpleWPF</id>
+    <version>1.0.0</version>
+    <title>Simple WPF</title>
+    <authors>Joben28</authors>
+    <owners>Joben28</owners>
+    <licenseUrl>https://github.com/Joben28/SimpleWPF/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Joben28/SimpleWPF</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A simple code foundation for a WPF application to handle basic view navigation, data templating, commands, property notification, and more.</description>
+    <releaseNotes></releaseNotes>
+    <copyright></copyright>
+    <tags></tags>
+    <summary></summary>
+  </metadata>
+  <files>
+	<file src="bin\Release\SimpleWpf.Core.dll" target="lib\net45"></file>
+  </files>
+</package>

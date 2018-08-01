@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace SimpleWPF.Core.Components
+namespace SimpleWPF.Components
 {
     /// <summary>
     /// A base for objects using property notification.

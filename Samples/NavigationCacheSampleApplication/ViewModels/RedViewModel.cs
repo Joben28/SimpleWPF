@@ -1,5 +1,5 @@
-﻿using SimpleWPF.Core.Input;
-using SimpleWPF.Core.ViewModels;
+﻿using SimpleWPF.Input;
+using SimpleWPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

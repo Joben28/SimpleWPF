@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SimpleWPF.Core.Input
+namespace SimpleWPF.Input
 {
     /// <summary>
     /// An async command implementation

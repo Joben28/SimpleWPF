@@ -1,5 +1,5 @@
 ﻿using MultiWindowSampleApplication.ViewModels;
-using SimpleWPF.Core.Core;
+using SimpleWPF.Core;
 using System.Windows;
 
 namespace MultiWindowSampleApplication

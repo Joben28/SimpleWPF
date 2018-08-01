@@ -1,9 +1,9 @@
-﻿using SimpleWPF.Core.Navigation.Arguments;
-using SimpleWPF.Core.ViewModels;
+﻿using SimpleWPF.Navigation.Arguments;
+using SimpleWPF.ViewModels;
 using System;
 using System.Collections.ObjectModel;
 
-namespace SimpleWPF.Core.Navigation
+namespace SimpleWPF.Navigation
 {
     /// <summary>
     /// Handles the application navigation

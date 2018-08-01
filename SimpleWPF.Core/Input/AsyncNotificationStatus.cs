@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleWPF.Core.Input
+namespace SimpleWPF.Input
 {
     public enum AsyncNotificationStatus
     {

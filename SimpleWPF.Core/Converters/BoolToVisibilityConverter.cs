@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace SimpleWPF.Core.Converters
+namespace SimpleWPF.Converters
 {
     public class BoolToVisibilityConverter : IValueConverter
     {
