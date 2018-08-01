@@ -1,6 +1,6 @@
-﻿using SimpleWPF.Core.Input;
-using SimpleWPF.Core.Navigation.Arguments;
-using SimpleWPF.Core.ViewModels;
+﻿using SimpleWPF.Input;
+using SimpleWPF.Navigation.Arguments;
+using SimpleWPF.ViewModels;
 using System.Windows.Input;
 
 namespace SingleWindowSampleApplication.ViewModels

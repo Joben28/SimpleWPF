@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SimpleWPF.Core.Input
+namespace SimpleWPF.Input
 {
     public interface IAsyncCommand : ICommand
     {

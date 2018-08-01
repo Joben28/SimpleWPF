@@ -1,4 +1,4 @@
-﻿using SimpleWPF.Core.Navigation;
+﻿using SimpleWPF.Navigation;
 
 namespace MultiWindowSampleApplication
 {

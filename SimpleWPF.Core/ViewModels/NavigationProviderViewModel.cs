@@ -1,6 +1,6 @@
-﻿using SimpleWPF.Core.Navigation;
+﻿using SimpleWPF.Navigation;
 
-namespace SimpleWPF.Core.ViewModels
+namespace SimpleWPF.ViewModels
 {
     /// <summary>
     /// A base provider for the navigation service

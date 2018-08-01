@@ -122,9 +122,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SimpleWPF.Core\SimpleWPF.Core.csproj">
+    <ProjectReference Include="..\..\SimpleWPF.Core\SimpleWPF.csproj">
       <Project>{c4239bf9-8454-4fa9-b86f-2bb679b77efb}</Project>
-      <Name>SimpleWPF.Core</Name>
+      <Name>SimpleWPF</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

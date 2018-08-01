@@ -1,4 +1,4 @@
-﻿using SimpleWPF.Core.Core;
+﻿using SimpleWPF.Core;
 using SingleWindowSampleApplication.ViewModels;
 using System.Windows;
 

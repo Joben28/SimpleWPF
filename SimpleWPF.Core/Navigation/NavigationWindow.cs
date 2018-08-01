@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace SimpleWPF.Core.Navigation
+namespace SimpleWPF.Navigation
 {
     /// <summary>
     /// Base for navigation window

@@ -1,7 +1,7 @@
-﻿using SimpleWPF.Core.Navigation;
-using SimpleWPF.Core.ViewModels;
+﻿using SimpleWPF.Navigation;
+using SimpleWPF.ViewModels;
 
-namespace SimpleWPF.Core.Core
+namespace SimpleWPF.Core
 {
     /// <summary>
     /// The core object to implement SimpleWPF

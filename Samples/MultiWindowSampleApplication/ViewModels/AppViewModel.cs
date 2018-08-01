@@ -1,6 +1,6 @@
-﻿using SimpleWPF.Core.Input;
-using SimpleWPF.Core.Navigation;
-using SimpleWPF.Core.ViewModels;
+﻿using SimpleWPF.Input;
+using SimpleWPF.Navigation;
+using SimpleWPF.ViewModels;
 using System.Windows.Input;
 
 namespace MultiWindowSampleApplication.ViewModels

@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Markup;
 
-namespace SimpleWPF.Core.Core
+namespace SimpleWPF.Core
 {
     /// <summary>
     /// A management object for loading data templates

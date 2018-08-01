@@ -1,7 +1,7 @@
-﻿using SimpleWPF.Core.ViewModels;
+﻿using SimpleWPF.ViewModels;
 using System;
 
-namespace SimpleWPF.Core.Navigation.Arguments
+namespace SimpleWPF.Navigation.Arguments
 {
     public delegate void BeforeNavigationEventHandler(object sender, NavigationEventArgs e);
 

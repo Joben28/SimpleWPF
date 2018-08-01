@@ -1,4 +1,4 @@
-﻿using SimpleWPF.Core.ViewModels;
+﻿using SimpleWPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

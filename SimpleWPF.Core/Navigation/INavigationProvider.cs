@@ -1,6 +1,6 @@
-﻿using SimpleWPF.Core.ViewModels;
+﻿using SimpleWPF.ViewModels;
 
-namespace SimpleWPF.Core.Navigation
+namespace SimpleWPF.Navigation
 {
     /// <summary>
     /// An interface for a main object handling navigation.
