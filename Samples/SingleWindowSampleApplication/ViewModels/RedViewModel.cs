@@ -5,23 +5,23 @@ using System.Windows.Input;
 
 namespace SingleWindowSampleApplication.ViewModels
 {
-    public class RedViewModel : SimpleViewModel
+    public class RedViewModel : NavigationViewModelBase
     {
-        private SimpleViewModel _blueViewModel;
-        private SimpleViewModel _yellowViewModel;
+        private NavigationViewModelBase _blueViewModel;
+        private NavigationViewModelBase _yellowViewModel;
 
         public ICommand GotoBackCommand { get; set; }
         public ICommand GotoBlueCommand { get; set; }
         public ICommand GotoYellowCommand { get; set; }
 
-        public RedViewModel(SimpleViewModel blueViewModel)
+        public RedViewModel(NavigationViewModelBase blueViewModel)
         {
             _blueViewModel = blueViewModel;
             _yellowViewModel = new YellowViewModel(this);
 
-            GotoBackCommand = new SimpleRelayCommand(GotoBack);
-            GotoBlueCommand = new SimpleRelayCommand(GotoBlue);
-            GotoYellowCommand = new SimpleRelayCommand(GotoYellow);
+            GotoBackCommand = new RelayCommand(GotoBack);
+            GotoBlueCommand = new RelayCommand(GotoBlue);
+            GotoYellowCommand = new RelayCommand(GotoYellow);
         }
 
         private void GotoBack()

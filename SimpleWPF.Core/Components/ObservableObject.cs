@@ -7,7 +7,7 @@ namespace SimpleWPF.Core.Components
     /// <summary>
     /// A base for objects using property notification.
     /// </summary>
-    public class SimpleObservableObject : INotifyPropertyChanged
+    public class ObservableObject : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

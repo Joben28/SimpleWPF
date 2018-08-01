@@ -5,9 +5,9 @@ using TestingApplication.Models.Cache;
 
 namespace MultiWindowSampleApplication.ViewModels
 {
-    public class AuthorizedViewModel : SimpleViewModel
+    public class AuthorizedViewModel : NavigationViewModelBase
     {
-        protected override void Navigate(SimpleViewModel navigationObject)
+        protected override void Navigate(NavigationViewModelBase navigationObject)
         {
             if (navigationObject is AuthorizedViewModel authVM)
             {
@@ -23,7 +23,7 @@ namespace MultiWindowSampleApplication.ViewModels
             base.Navigate(navigationObject);
         }
 
-        protected override void NavigateWindow(SimpleViewModel navObject, ISimpleWindow newWindow)
+        protected override void NavigateWindow(NavigationViewModelBase navObject, INavigationWindow newWindow)
         {
             if (navObject is AuthorizedViewModel authVM)
             {

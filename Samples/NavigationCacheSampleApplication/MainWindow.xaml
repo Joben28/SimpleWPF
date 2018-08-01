@@ -1,4 +1,4 @@
-﻿<simple:SimpleWindow x:Class="NavigationCacheSampleApplication.MainWindow"
+﻿<simple:NavigationWindow x:Class="NavigationCacheSampleApplication.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -10,4 +10,4 @@
     <Grid>
         <ContentControl Content="{Binding Current}"/>
     </Grid>
-</simple:SimpleWindow>
+</simple:NavigationWindow>

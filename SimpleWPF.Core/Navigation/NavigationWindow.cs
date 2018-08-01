@@ -5,13 +5,13 @@ namespace SimpleWPF.Core.Navigation
     /// <summary>
     /// Base for navigation window
     /// </summary>
-    public class SimpleWindow : Window, ISimpleWindow
+    public class NavigationWindow : Window, INavigationWindow
     {
-        private ISimpleNavigationProvider provider;
+        private INavigationProvider provider;
 
-        public SimpleWindow()
+        public NavigationWindow()
         {
-            provider = SimpleNavigationService.Instance.Provider;
+            provider = NavigationService.Instance.Provider;
 
             if (provider.Window == null)
                 provider.Window = this;
@@ -34,7 +34,7 @@ namespace SimpleWPF.Core.Navigation
             Show();
         }
 
-        public void TransitionWindow(ISimpleWindow to)
+        public void TransitionWindow(INavigationWindow to)
         {
             to.SetDataContext(DataContext);
             to.ShowWindow();

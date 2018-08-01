@@ -9,7 +9,7 @@ namespace SimpleWPF.Core.Core
     /// <summary>
     /// A management object for loading data templates
     /// </summary>
-    public sealed class SimpleDataTemplateManager
+    public sealed class DataTemplateManager
     {
         /// <summary>
         /// Load assembly object and register data templates based on naming convention, e.g., FooViewModel --> FooView

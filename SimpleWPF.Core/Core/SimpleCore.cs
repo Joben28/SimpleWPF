@@ -8,12 +8,12 @@ namespace SimpleWPF.Core.Core
     /// </summary>
     public class SimpleCore
     {
-        private SimpleNavigationService service;
-        public ISimpleNavigationProvider Handler { get; set; }
+        private NavigationService service;
+        public INavigationProvider Handler { get; set; }
 
         public SimpleCore()
         {
-            service = SimpleNavigationService.Instance;
+            service = NavigationService.Instance;
         }
 
         /// <summary>
@@ -22,8 +22,8 @@ namespace SimpleWPF.Core.Core
         /// <param name="navigationHandler">Object that handles navigation</param>
         /// <param name="defaultNavigation">View that navigation defaults to</param>
         /// <param name="forceDefaultNavigation">Force default view on startup?</param>
-        public void Startup(ISimpleNavigationProvider navigationHandler,
-            SimpleViewModel defaultNavigation = null,
+        public void Startup(INavigationProvider navigationHandler,
+            NavigationViewModelBase defaultNavigation = null,
             bool forceDefaultNavigation = false)
         {
             service.RegisterProvider(navigationHandler);

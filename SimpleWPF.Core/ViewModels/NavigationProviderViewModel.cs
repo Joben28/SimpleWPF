@@ -5,19 +5,19 @@ namespace SimpleWPF.Core.ViewModels
     /// <summary>
     /// A base provider for the navigation service
     /// </summary>
-    public class SimpleProviderViewModel : SimpleViewModel, ISimpleNavigationProvider
+    public class NavigationProviderViewModel : NavigationViewModelBase, INavigationProvider
     {
-        private SimpleViewModel current;
+        private NavigationViewModelBase current;
 
-        public SimpleViewModel Current
+        public NavigationViewModelBase Current
         {
             get { return current; }
             set { OnPropertyChanged(ref current, value); }
         }
 
-        private ISimpleWindow window;
+        private INavigationWindow window;
 
-        public ISimpleWindow Window
+        public INavigationWindow Window
         {
             get { return window; }
             set { OnPropertyChanged(ref window, value); }

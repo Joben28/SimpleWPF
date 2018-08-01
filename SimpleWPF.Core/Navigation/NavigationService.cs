@@ -8,17 +8,17 @@ namespace SimpleWPF.Core.Navigation
     /// <summary>
     /// Handles the application navigation
     /// </summary>
-    public sealed class SimpleNavigationService
+    public sealed class NavigationService
     {
-        public static readonly SimpleNavigationService Instance = new SimpleNavigationService();
+        public static readonly NavigationService Instance = new NavigationService();
 
         /// <summary>
         /// Collection of past navigation calls
         /// </summary>
-        public ObservableCollection<SimpleViewModel> NavigationHistory { get; private set; } = new ObservableCollection<SimpleViewModel>();
+        public ObservableCollection<NavigationViewModelBase> NavigationHistory { get; private set; } = new ObservableCollection<NavigationViewModelBase>();
 
-        public ISimpleNavigationProvider Provider { get; private set; }
-        public SimpleViewModel DefaultNavigation { get; private set; }
+        public INavigationProvider Provider { get; private set; }
+        public NavigationViewModelBase DefaultNavigation { get; private set; }
 
         /// <summary>
         /// Maximum number of objects to hold in history collection
@@ -33,7 +33,7 @@ namespace SimpleWPF.Core.Navigation
 
         public event AfterClosingEventHandler AfterClosing;
 
-        private SimpleNavigationService()
+        private NavigationService()
         {
         }
 
@@ -41,7 +41,7 @@ namespace SimpleWPF.Core.Navigation
         /// Navigate to ViewModel
         /// </summary>
         /// <param name="navObject">ViewModel to navigate to</param>
-        public void Navigate(SimpleViewModel navObject)
+        public void Navigate(NavigationViewModelBase navObject)
         {
             if (Provider == null)
                 throw new NullReferenceException("The navigation service does not have a registered 'ISimpleNavigationProvider'");
@@ -63,7 +63,7 @@ namespace SimpleWPF.Core.Navigation
         /// </summary>
         /// <param name="navObject">ViewModel to navigate to</param>
         /// <param name="newWindow">Window to navigate to</param>
-        public void NavigateWithNewWindow(SimpleViewModel navObject, ISimpleWindow newWindow)
+        public void NavigateWithNewWindow(NavigationViewModelBase navObject, INavigationWindow newWindow)
         {
             if (Provider == null)
                 throw new NullReferenceException("The navigation service does not have a registered 'ISimpleNavigationProvider'");
@@ -93,7 +93,7 @@ namespace SimpleWPF.Core.Navigation
         /// Register the provider that contains current view
         /// </summary>
         /// <param name="provider"></param>
-        public void RegisterProvider(ISimpleNavigationProvider provider)
+        public void RegisterProvider(INavigationProvider provider)
         {
             this.Provider = provider;
         }
@@ -103,7 +103,7 @@ namespace SimpleWPF.Core.Navigation
         /// </summary>
         /// <param name="navigationObject"></param>
         /// <param name="forceIfProviderEmpty"></param>
-        public void SetDefaultNavigation(SimpleViewModel navigationObject, bool forceIfProviderEmpty = false)
+        public void SetDefaultNavigation(NavigationViewModelBase navigationObject, bool forceIfProviderEmpty = false)
         {
             DefaultNavigation = navigationObject;
 
@@ -134,7 +134,7 @@ namespace SimpleWPF.Core.Navigation
             AfterClosing?.Invoke(this, e);
         }
 
-        private void AddToHistory(SimpleViewModel navObj)
+        private void AddToHistory(NavigationViewModelBase navObj)
         {
             if (NavigationHistory.Count >= MaxHistoryObjects)
                 NavigationHistory.RemoveAt(0);

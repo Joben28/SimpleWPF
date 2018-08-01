@@ -10,12 +10,12 @@ namespace SimpleWPF.Core.Input
     /// <summary>
     /// An async command implementation
     /// </summary>
-    public class SimpleAsyncCommand : ISimpleAsyncCommand
+    public class AsyncCommand : IAsyncCommand
     {
         /// <summary>
         /// Monitor for the commands current status
         /// </summary>
-        public SimpleAsyncCommandMonitor CommandMonitor { get; private set; }
+        public AsyncCommandMonitor CommandMonitor { get; private set; }
 
         public bool IsCanceled { get; private set; }
 
@@ -28,14 +28,14 @@ namespace SimpleWPF.Core.Input
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public SimpleAsyncCommand(Func<object, Task> execute, Func<object, bool> canExecute)
+        public AsyncCommand(Func<object, Task> execute, Func<object, bool> canExecute)
         {
-            CommandMonitor = new SimpleAsyncCommandMonitor();
+            CommandMonitor = new AsyncCommandMonitor();
             _execute = execute;
             _canExecute = canExecute;
         }
 
-        public SimpleAsyncCommand(Func<object, Task> execute) : this(execute, null) { }
+        public AsyncCommand(Func<object, Task> execute) : this(execute, null) { }
 
         public bool CanExecute(object parameter)
         {

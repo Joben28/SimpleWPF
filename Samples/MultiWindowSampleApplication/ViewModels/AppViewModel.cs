@@ -5,13 +5,13 @@ using System.Windows.Input;
 
 namespace MultiWindowSampleApplication.ViewModels
 {
-    public class AppViewModel : SimpleViewModel, ISimpleNavigationProvider
+    public class AppViewModel : NavigationViewModelBase, INavigationProvider
     {
         public ICommand HomeCommand { get; set; }
 
-        private SimpleViewModel current;
+        private NavigationViewModelBase current;
 
-        public SimpleViewModel Current
+        public NavigationViewModelBase Current
         {
             get { return current; }
             set
@@ -20,9 +20,9 @@ namespace MultiWindowSampleApplication.ViewModels
             }
         }
 
-        private ISimpleWindow window;
+        private INavigationWindow window;
 
-        public ISimpleWindow Window
+        public INavigationWindow Window
         {
             get { return window; }
             set
@@ -33,7 +33,7 @@ namespace MultiWindowSampleApplication.ViewModels
 
         public AppViewModel()
         {
-            HomeCommand = new SimpleRelayCommand(NavigateToHome);
+            HomeCommand = new RelayCommand(NavigateToHome);
         }
 
         private void NavigateToHome()

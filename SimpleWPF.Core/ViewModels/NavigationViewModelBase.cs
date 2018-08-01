@@ -10,26 +10,26 @@ namespace SimpleWPF.Core.ViewModels
     /// <summary>
     /// Base for ViewModels that implements property notification and navigation
     /// </summary>
-    public class SimpleViewModel : SimpleObservableObject
+    public abstract class NavigationViewModelBase : ObservableObject
     {
         protected static Dictionary<string, object> Cache { get; private set; }
-        protected SimpleNavigationService service { get; private set; }
+        protected NavigationService service { get; private set; }
 
-        public SimpleViewModel()
+        public NavigationViewModelBase()
         {
             if (service == null)
-                service = SimpleNavigationService.Instance;
+                service = NavigationService.Instance;
 
             if (Cache == null)
                 Cache = new Dictionary<string, object>();
         }
 
-        protected virtual void Navigate(SimpleViewModel navigationObject)
+        protected virtual void Navigate(NavigationViewModelBase navigationObject)
         {
             service.Navigate(navigationObject);
         }
 
-        protected virtual void NavigateWindow(SimpleViewModel navObject, ISimpleWindow newWindow)
+        protected virtual void NavigateWindow(NavigationViewModelBase navObject, INavigationWindow newWindow)
         {
             service.NavigateWithNewWindow(navObject, newWindow);
         }

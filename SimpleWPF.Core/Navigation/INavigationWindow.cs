@@ -1,6 +1,6 @@
 ﻿namespace SimpleWPF.Core.Navigation
 {
-    public interface ISimpleWindow
+    public interface INavigationWindow
     {
         void ShowWindow();
 
@@ -8,6 +8,6 @@
 
         void SetDataContext(object dataContext);
 
-        void TransitionWindow(ISimpleWindow to);
+        void TransitionWindow(INavigationWindow to);
     }
 }
