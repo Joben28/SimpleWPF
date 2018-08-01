@@ -4,23 +4,23 @@ SimpleWPF implements navigation through utilizing data templating. You can eithe
 
 ## STEP 1: Setting up ApplicationViewModel
 
-Typically to get started for navigation, you want to do some simple setup in your applications `App.xaml.cs`. However, before doing this you must create an `ApplicationViewModel` which will be the provider of the navigation service. This view model must implement the `ISimpleNavigationProvider` interface and it will hold the navigations *current* view model instance, as well as the current view models *window* (If, as you will see later, you use the SimpleWindow).
+Typically to get started for navigation, you want to do some simple setup in your applications `App.xaml.cs`. However, before doing this you must create an `ApplicationViewModel` which will be the provider of the navigation service. This view model must implement the `INavigationProvider` interface and it will hold the navigations *current* view model instance, as well as the current view models *window* (If, as you will see later, you use the NavigationWindow).
 
-It also would be neccessary to setup the interface properties to handle property change notification. You can do this by using the `SimpleViewModel` as the base class. 
+It also would be neccessary to setup the interface properties to handle property change notification. You can do this by using the `NavigationViewModelBase` as the base class. 
 
 *AppViewModel Example:*
 ````C#
-    public class AppViewModel : SimpleViewModel, ISimpleNavigationProvider
+    public class AppViewModel : NavigationViewModelBase, INavigationProvider
     {
-        private SimpleViewModel current;
-        public SimpleViewModel Current
+        private NavigationViewModelBase current;
+        public NavigationViewModelBase Current
         {
             get { return current; }
             set { OnPropertyChanged(ref current, value); }
         }
 
-        private ISimpleWindow window;
-        public ISimpleWindow Window
+        private INavigationWindow window;
+        public INavigationWindow Window
         {
             get { return window; }
             set { OnPropertyChanged(ref window, value); }
@@ -28,9 +28,11 @@ It also would be neccessary to setup the interface properties to handle property
     }
 ````
 
+Alternatively you could just use the `NavigationProviderViewModel` to avoid needing to implement the interface and view model base.
+
 ## STEP 2: Application Startup
 
-Once we have an `ApplicationViewModel` we can proceed to implementing some basic startup in our projects `App.xaml.cs`. We will do this in an override method of `OnStartup`.
+Once we have an `ApplicationViewModel` we can proceed to implementing the basic startup in our projects `App.xaml.cs`. We will do this in an override method of `OnStartup`.
 
 *App.xaml.cs Example*
 ````C#
@@ -45,7 +47,7 @@ Once we have an `ApplicationViewModel` we can proceed to implementing some basic
             core.Startup(new AppViewModel(), new BlueViewModel(), true);
 
 	    //Option 1
-            SimpleDataTemplateManager manager = new SimpleDataTemplateManager();
+            DataTemplateManager manager = new DataTemplateManager();
             manager.LoadDataTemplatesByConvention();
 
 	    //Option 2
@@ -73,17 +75,17 @@ Here we are registering our `AppViewModel` to our navigation service. This is wh
 # STEP 3: Setting up the Window
 
 We have two options for setting up the window. 
-- **Option 1:** will required some modification of our xaml in `MainWindow`.
+- **Option 1:** will require some modification of our xaml in `MainWindow`.
 - **Option 2:** will require some code-behind in our `MainWindow`
 
 ### Option 1:
 As of now, we must also setup our applications launch window for our navigation service to work. I hope to find a way to cut this part out and reduce the amount of boiler plate needed, but for now it is unfortunately neccessary. Luckily, it is very quick and simple.
 
-First, we need to goto our `MainWindow.xaml` and provide a namespace for our SimpleWPF reference. Next, we need to change our `<Window>` tag to `<xxx:SimpleWindow>`.
+First, we need to goto our `MainWindow.xaml` and provide a namespace for our SimpleWPF reference. Next, we need to change our `<Window>` tag to `<xxx:NavigationWindow>`.
 
 *MainWindow Example*
 ````xaml
-<simple:SimpleWindow x:Class="SingleWindowSampleApplication.MainWindow"
+<simple:NavigationWindow x:Class="SingleWindowSampleApplication.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -108,7 +110,7 @@ First, we need to goto our `MainWindow.xaml` and provide a namespace for our Sim
 ````
 
 ### Option 2:
-An alternative would be to simply setup the data context in your `MainWindow` code-behind yourself. However, I chose to use `SimpleWindow` to eliminate the need of code-behind in the window control. If you would rather do it yourself, you can scrap the `SimpleWindow` all together and do the following in your windows constructor.
+An alternative would be to simply setup the data context in your `MainWindow` code-behind yourself. However, I chose to use `NavigationWindow` in the xaml to eliminate the need of code-behind in the window control. If you would rather do it yourself, you can scrap the `NavigationWindow` all together and do the following in your windows constructor.
 
 ````C#
         public MainWindow()
@@ -119,7 +121,7 @@ An alternative would be to simply setup the data context in your `MainWindow` co
         }
 ````
 
-**NOTE:** In case you are wondering, the `Provider` and `SimpleNavigationService` are setup in our startup call we made earlier in *Step 2*. The provider is actually our `AppViewModel`.
+**NOTE:** In case you are wondering, the `Provider` and `NavigationService` are setup in our startup call we made earlier in *Step 2*. The provider is actually our `AppViewModel`.
 
 # STEP 4: Setting up Window Content
 Lastly, all we have left to do it give our window a `UserControl` for its content, and bind it to our providers `Current` property.
