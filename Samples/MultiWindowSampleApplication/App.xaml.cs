@@ -18,7 +18,7 @@ namespace MultiWindowSampleApplication
             var loginVm = new LoginViewModel();
             core.Startup(appVm, loginVm, true);
 
-            SimpleDataTemplateManager manager = new SimpleDataTemplateManager();
+            DataTemplateManager manager = new DataTemplateManager();
             manager.LoadDataTemplatesByConvention();
         }
     }

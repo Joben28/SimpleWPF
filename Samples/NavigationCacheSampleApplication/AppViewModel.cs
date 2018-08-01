@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NavigationCacheSampleApplication
 {
-    public class AppViewModel : SimpleProviderViewModel
+    public class AppViewModel : NavigationProviderViewModel
     {
     }
 }

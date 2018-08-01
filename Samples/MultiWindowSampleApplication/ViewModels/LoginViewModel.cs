@@ -6,13 +6,13 @@ using TestingApplication.Models.Cache;
 
 namespace MultiWindowSampleApplication
 {
-    public class LoginViewModel : SimpleViewModel
+    public class LoginViewModel : NavigationViewModelBase
     {
         public ICommand LoginCommand { get; set; }
 
         public LoginViewModel()
         {
-            LoginCommand = new SimpleRelayCommand(Login);
+            LoginCommand = new RelayCommand(Login);
         }
 
         private void Login()

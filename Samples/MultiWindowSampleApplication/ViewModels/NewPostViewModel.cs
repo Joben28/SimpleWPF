@@ -14,7 +14,7 @@ namespace MultiWindowSampleApplication
         public NewPostViewModel()
         {
             Post = new PostModel();
-            SubmitCommand = new SimpleRelayCommand(NavigateToB);
+            SubmitCommand = new RelayCommand(NavigateToB);
         }
 
         private void NavigateToB()

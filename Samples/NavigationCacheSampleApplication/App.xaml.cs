@@ -24,7 +24,7 @@ namespace NavigationCacheSampleApplication
             var redVm = new RedViewModel();
             core.Startup(appVm, redVm, true);
 
-            SimpleDataTemplateManager manager = new SimpleDataTemplateManager();
+            DataTemplateManager manager = new DataTemplateManager();
             manager.LoadDataTemplatesByConvention();
         }
     }

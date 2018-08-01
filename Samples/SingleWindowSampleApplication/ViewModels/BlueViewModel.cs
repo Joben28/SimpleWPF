@@ -4,15 +4,15 @@ using System.Windows.Input;
 
 namespace SingleWindowSampleApplication.ViewModels
 {
-    public class BlueViewModel : SimpleViewModel
+    public class BlueViewModel : NavigationViewModelBase
     {
-        private SimpleViewModel _redViewModel;
+        private NavigationViewModelBase _redViewModel;
         public ICommand GotoRedCommand { get; set; }
 
         public BlueViewModel()
         {
             _redViewModel = new RedViewModel(this);
-            GotoRedCommand = new SimpleRelayCommand(GotoRed);
+            GotoRedCommand = new RelayCommand(GotoRed);
         }
 
         private void GotoRed()

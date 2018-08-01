@@ -5,7 +5,7 @@ namespace MultiWindowSampleApplication
     /// <summary>
     /// Interaction logic for TestWindow.xaml
     /// </summary>
-    public partial class MainWindow : SimpleWindow
+    public partial class MainWindow : NavigationWindow
     {
         public MainWindow()
         {

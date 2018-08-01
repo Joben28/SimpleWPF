@@ -22,7 +22,7 @@ namespace SingleWindowSampleApplication
 
             //Load Templates based on naming convention
             //EX: 'RedViewModel' will be paired with 'RedView'
-            SimpleDataTemplateManager manager = new SimpleDataTemplateManager();
+            DataTemplateManager manager = new DataTemplateManager();
             manager.LoadDataTemplatesByConvention();
 
             //Alternative would be to manually pair types

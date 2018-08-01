@@ -5,23 +5,23 @@ using System.Windows.Input;
 
 namespace SingleWindowSampleApplication.ViewModels
 {
-    public class YellowViewModel : SimpleViewModel
+    public class YellowViewModel : NavigationViewModelBase
     {
-        private SimpleViewModel _redViewModel;
+        private NavigationViewModelBase _redViewModel;
 
         public ICommand GotoRedCommand { get; set; }
         public ICommand NavCommand { get; set; }
 
-        public YellowViewModel(SimpleViewModel redViewModel)
+        public YellowViewModel(NavigationViewModelBase redViewModel)
         {
             _redViewModel = redViewModel;
-            GotoRedCommand = new SimpleRelayCommand(GotoRed);
-            NavCommand = new SimpleRelayCommand<Type>(Nav);
+            GotoRedCommand = new RelayCommand(GotoRed);
+            NavCommand = new RelayCommand<Type>(Nav);
         }
 
         private void Nav(Type obj)
         {
-            Navigate(Activator.CreateInstance(obj) as SimpleViewModel);
+            Navigate(Activator.CreateInstance(obj) as NavigationViewModelBase);
         }
 
         private void GotoRed()

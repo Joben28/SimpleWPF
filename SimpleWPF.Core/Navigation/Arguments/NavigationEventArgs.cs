@@ -16,18 +16,18 @@ namespace SimpleWPF.Core.Navigation.Arguments
         /// <summary>
         /// ViewModel being navigated to
         /// </summary>
-        public SimpleViewModel ViewModelTo { get; private set; }
+        public NavigationViewModelBase ViewModelTo { get; private set; }
 
         /// <summary>
         /// ViewModel being navigated from
         /// </summary>
-        public SimpleViewModel ViewModelFrom { get; private set; }
+        public NavigationViewModelBase ViewModelFrom { get; private set; }
 
         public NavigationEventArgs()
         {
         }
 
-        public NavigationEventArgs(SimpleViewModel navigatingTo, SimpleViewModel navigatingFrom = null)
+        public NavigationEventArgs(NavigationViewModelBase navigatingTo, NavigationViewModelBase navigatingFrom = null)
         {
             ViewModelTo = navigatingTo;
             ViewModelFrom = navigatingFrom;
@@ -39,18 +39,18 @@ namespace SimpleWPF.Core.Navigation.Arguments
         /// <summary>
         /// Window to be navigated to
         /// </summary>
-        public ISimpleWindow WindowTo { get; private set; }
+        public INavigationWindow WindowTo { get; private set; }
 
         /// <summary>
         /// Window being navigated from
         /// </summary>
-        public ISimpleWindow WindowFrom { get; private set; }
+        public INavigationWindow WindowFrom { get; private set; }
 
         public WindowEventArgs()
         {
         }
 
-        public WindowEventArgs(ISimpleWindow windowTo, ISimpleWindow windowFrom = null)
+        public WindowEventArgs(INavigationWindow windowTo, INavigationWindow windowFrom = null)
         {
             WindowTo = windowTo;
             WindowFrom = windowFrom;

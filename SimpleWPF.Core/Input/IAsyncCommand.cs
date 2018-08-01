@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace SimpleWPF.Core.Input
 {
-    public interface ISimpleAsyncCommand : ICommand
+    public interface IAsyncCommand : ICommand
     {
         bool IsCanceled { get; }
         void ExecuteAsync(Task parameter);

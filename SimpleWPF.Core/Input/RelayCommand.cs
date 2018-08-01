@@ -7,12 +7,12 @@ namespace SimpleWPF.Core.Input
     /// A command implementation
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class SimpleRelayCommand<T> : ICommand
+    public class RelayCommand<T> : ICommand
     {
         private readonly Action<T> _execute = null;
         private readonly Func<T, bool> _canExecute = null;
 
-        public SimpleRelayCommand(Action<T> execute, Func<T, bool> canExecute = null)
+        public RelayCommand(Action<T> execute, Func<T, bool> canExecute = null)
         {
             _execute = execute ?? throw new ArgumentNullException(nameof(execute));
             _canExecute = canExecute ?? (_ => true);
@@ -29,12 +29,12 @@ namespace SimpleWPF.Core.Input
         public void Execute(object parameter) => _execute((T)parameter);
     }
 
-    public class SimpleRelayCommand : SimpleRelayCommand<object>
+    public class RelayCommand : RelayCommand<object>
     {
-        public SimpleRelayCommand(Action execute)
+        public RelayCommand(Action execute)
             : base(_ => execute()) { }
 
-        public SimpleRelayCommand(Action execute, Func<bool> canExecute)
+        public RelayCommand(Action execute, Func<bool> canExecute)
             : base(_ => execute(), _ => canExecute()) { }
     }
 }

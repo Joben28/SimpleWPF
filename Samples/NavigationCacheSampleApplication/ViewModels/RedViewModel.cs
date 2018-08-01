@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace NavigationCacheSampleApplication.ViewModels
 {
-    public class RedViewModel : SimpleViewModel
+    public class RedViewModel : NavigationViewModelBase
     {
         private BlueViewModel _blueVM;
         public ICommand GotoBlueCommand { get; private set; }
@@ -24,7 +24,7 @@ namespace NavigationCacheSampleApplication.ViewModels
         public RedViewModel()
         {
             _blueVM = new BlueViewModel();
-            GotoBlueCommand = new SimpleRelayCommand(GotoBlue);
+            GotoBlueCommand = new RelayCommand(GotoBlue);
         }
 
         private void GotoBlue()
