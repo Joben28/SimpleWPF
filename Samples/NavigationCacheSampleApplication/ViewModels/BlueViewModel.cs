@@ -34,6 +34,8 @@ namespace NavigationCacheSampleApplication.ViewModels
 
         private void GotoRed()
         {
+            //We wouldn't want to create a new RedViewModel because
+            //the RedViewModel creates a BlueViewModel in constructor.
             NavigateBack();
         }
     }
