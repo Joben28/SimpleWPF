@@ -12,15 +12,15 @@ It also would be neccessary to setup the interface properties to handle property
 ````C#
     public class AppViewModel : NavigationViewModelBase, INavigationProvider
     {
-        private SimpleViewModel current;
-        public SimpleViewModel Current
+        private NavigationViewModelBase current;
+        public NavigationViewModelBase Current
         {
             get { return current; }
             set { OnPropertyChanged(ref current, value); }
         }
 
-        private ISimpleWindow window;
-        public ISimpleWindow Window
+        private INavigationWindow window;
+        public INavigationWindow Window
         {
             get { return window; }
             set { OnPropertyChanged(ref window, value); }
@@ -81,11 +81,11 @@ We have two options for setting up the window.
 ### Option 1:
 As of now, we must also setup our applications launch window for our navigation service to work. I hope to find a way to cut this part out and reduce the amount of boiler plate needed, but for now it is unfortunately neccessary. Luckily, it is very quick and simple.
 
-First, we need to goto our `MainWindow.xaml` and provide a namespace for our SimpleWPF reference. Next, we need to change our `<Window>` tag to `<xxx:SimpleWindow>`.
+First, we need to goto our `MainWindow.xaml` and provide a namespace for our SimpleWPF reference. Next, we need to change our `<Window>` tag to `<xxx:NavigationWindow>`.
 
 *MainWindow Example*
 ````xaml
-<simple:SimpleWindow x:Class="SingleWindowSampleApplication.MainWindow"
+<simple:NavigationWindow x:Class="SingleWindowSampleApplication.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
