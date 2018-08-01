@@ -130,7 +130,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SimpleWPF.Core\SimpleWPF.csproj">
+    <ProjectReference Include="..\..\SimpleWPF\SimpleWPF.csproj">
       <Project>{c4239bf9-8454-4fa9-b86f-2bb679b77efb}</Project>
       <Name>SimpleWPF</Name>
     </ProjectReference>
