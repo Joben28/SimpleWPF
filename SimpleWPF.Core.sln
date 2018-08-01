@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleWindowSampleApplicati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateProject", "TemplateProject\TemplateProject.csproj", "{59942EE5-B94B-4CE8-9041-65B964BEE596}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavigationCacheSampleApplication", "NavigationCacheSampleApplication\NavigationCacheSampleApplication.csproj", "{4E9BD8C3-542D-4705-9DCA-CA5A6C39D1A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavigationCacheSampleApplication", "Samples\NavigationCacheSampleApplication\NavigationCacheSampleApplication.csproj", "{4E9BD8C3-542D-4705-9DCA-CA5A6C39D1A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
