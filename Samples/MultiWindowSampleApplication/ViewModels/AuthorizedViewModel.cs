@@ -9,9 +9,9 @@ namespace MultiWindowSampleApplication.ViewModels
     {
         protected override void Navigate(NavigationViewModelBase navigationObject)
         {
-            if (navigationObject is AuthorizedViewModel authVM)
+            if (navigationObject is AuthorizedViewModel)
             {
-                if (VerifyNavigation(authVM))
+                if (VerifyNavigation((AuthorizedViewModel)navigationObject))
                 {
                     base.Navigate(navigationObject);
                     return;
@@ -25,9 +25,9 @@ namespace MultiWindowSampleApplication.ViewModels
 
         protected override void NavigateWindow(NavigationViewModelBase navObject, INavigationWindow newWindow)
         {
-            if (navObject is AuthorizedViewModel authVM)
+            if (navObject is AuthorizedViewModel)
             {
-                if (VerifyNavigation(authVM))
+                if (VerifyNavigation((AuthorizedViewModel)navObject))
                 {
                     base.Navigate(navObject);
                     return;

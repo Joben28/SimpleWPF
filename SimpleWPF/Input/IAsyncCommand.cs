@@ -9,8 +9,6 @@ namespace SimpleWPF.Input
 {
     public interface IAsyncCommand : ICommand
     {
-        bool IsCanceled { get; }
-        void ExecuteAsync(Task parameter);
-        void CancelAsync();
+        AsyncNotificationStatus Status { get; set; }
     }
 }
