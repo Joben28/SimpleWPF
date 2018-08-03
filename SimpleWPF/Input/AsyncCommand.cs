@@ -1,4 +1,4 @@
-﻿using SimpleWPF.Components;
+using SimpleWPF.Components;
 using SimpleWPF.Utils;
 using System;
 using System.Threading.Tasks;
@@ -26,6 +26,7 @@ namespace SimpleWPF.Input
         private AsyncNotificationStatus _status = AsyncNotificationStatus.Idle;
         private ObservableTask _obvservableTask = null;
         private Func<object, bool> _canExecute;
+
         public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
@@ -39,7 +40,6 @@ namespace SimpleWPF.Input
                 _obvservableTask = new ObservableTask(execute);
                 _obvservableTask.Register(this);
             }
-
             _canExecute = canExecute;
         }
 

@@ -25,7 +25,6 @@ namespace SimpleWPF.Input
             _canExecute = canExecute ?? (_ => true);
         }
 
-
         public bool CanExecute(object parameter) => _canExecute((T)parameter);
 
         public void Execute(object parameter) => _execute((T)parameter);
