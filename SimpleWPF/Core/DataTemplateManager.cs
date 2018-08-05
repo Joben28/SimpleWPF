@@ -12,6 +12,16 @@ namespace SimpleWPF.Core
     public sealed class DataTemplateManager
     {
         /// <summary>
+        /// String value added after the name of a view model object (Default is 'ViewModel').
+        /// </summary>
+        public string ViewModelNameSuffix { get; set; } = "ViewModel";
+
+        /// <summary>
+        /// String value added after the name of a view (Default is 'View').
+        /// </summary>
+        public string ViewNameSuffix { get; set; } = "View";
+
+        /// <summary>
         /// Load assembly object and register data templates based on naming convention, e.g., FooViewModel --> FooView
         /// </summary>
         public void LoadDataTemplatesByConvention()
@@ -19,13 +29,13 @@ namespace SimpleWPF.Core
             var assembly = Assembly.GetCallingAssembly();
             var assemblyTypes = assembly.GetTypes();
 
-            var viewModels = assemblyTypes.Where(x => x.Name.Contains("ViewModel"));
+            var viewModels = assemblyTypes.Where(x => x.Name.Contains(ViewModelNameSuffix));
 
             foreach (var vm in viewModels)
             {
-                var baseName = vm.Name.Replace("ViewModel", string.Empty);
+                var baseName = vm.Name.Replace(ViewModelNameSuffix, string.Empty);
 
-                var viewType = assemblyTypes.FirstOrDefault(x => x.Name == baseName + "View");
+                var viewType = assemblyTypes.FirstOrDefault(x => x.Name == baseName + ViewNameSuffix);
 
                 if (viewType != null)
                     RegisterDataTemplate(vm, viewType);
@@ -70,6 +80,7 @@ namespace SimpleWPF.Core
             context.XmlnsDictionary.Add("v", "v");
 
             var template = (DataTemplate)XamlReader.Parse(xaml, context);
+            Console.WriteLine(xaml);
             return template;
         }
     }
