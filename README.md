@@ -62,6 +62,9 @@ As you can see there are **two options** for managing your applications data tem
 
 - **Option 1:** Simply load data templates based on a naming convention using `LoadDataTemplatesByConvention()`. For example, `RedViewModel` is automatically paired with the `RedView` usercontrol. The pairs are found through the collection of types that exist in the assembly, and are paired by their names. *KEEP IN MIND THIS IS CASE SENSATIVE*. 
 
+*Update:* You can now change the naming convention suffix for view models and views with the `ViewModelNameSuffix` and `ViewNameSuffix` properties in the data template manager.
+
+
 - **Option 2:** Use the managers `RegisterDataTemplate()` method to define specific type pairs. This is shown as option 2 in the example above.
 
 ### Wait! What about Line  9?
