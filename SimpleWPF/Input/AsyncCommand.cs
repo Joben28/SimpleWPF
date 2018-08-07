@@ -18,7 +18,7 @@ namespace SimpleWPF.Input
             set { OnPropertyChanged(ref _status, value); }
         }
 
-        private ObservableTask _obvservableTask;
+        private ObservableTask _observableTask;
         private Func<object, bool> _canExecute;
 
         public event EventHandler CanExecuteChanged
@@ -32,8 +32,8 @@ namespace SimpleWPF.Input
             if (execute == null)
                 throw new ArgumentNullException(nameof(execute));
 
-            _obvservableTask = new ObservableTask(execute);
-            _obvservableTask.Register(this);
+            _observableTask = new ObservableTask(execute);
+            _observableTask.Register(this);
             _canExecute = canExecute;
         }
 
@@ -52,7 +52,7 @@ namespace SimpleWPF.Input
 
         public void Execute(object parameter)
         {
-            _obvservableTask.Run(parameter);
+            _observableTask.Run(parameter);
             RaiseCanExecuteChanged();
         }
 
@@ -63,7 +63,7 @@ namespace SimpleWPF.Input
 
         public void Update()
         {
-            Status = _obvservableTask.Status;
+            Status = _observableTask.Status;
         }
     }
 }
