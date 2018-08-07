@@ -1,8 +1,17 @@
+# SimpleWPF
+SimpleWPF is a .Net library for creating simple and fast Windows Presentation Foundation (WPF) applications. This library includes navigation services, command implementations (Including async), and data template management, and more.
+
 # Getting Started
+Read below to get information on installation and implementing the library in to your WPF application.
 
-SimpleWPF implements navigation through utilizing data templating. You can either manually define ViewModel and View pairs, or you can rely on these pairs being automatically assigned based on naming conventions.
+## Installation
+SimpleWPF can be installed via the nuget package manager console:
 
-## STEP 1: Setting up ApplicationViewModel
+    PM> Install-Package SimpleWPF -Version 2.0.2
+    
+## Setup
+
+### STEP 1: Setting up ApplicationViewModel
 
 Typically to get started for navigation, you want to do some simple setup in your applications `App.xaml.cs`. However, before doing this you must create an `ApplicationViewModel` which will be the provider of the navigation service. This view model must implement the `INavigationProvider` interface and it will hold the navigations *current* view model instance, as well as the current view models *window* (If, as you will see later, you use the NavigationWindow).
 
@@ -30,7 +39,7 @@ It also would be neccessary to setup the interface properties to handle property
 
 Alternatively you could just use the `NavigationProviderViewModel` to avoid needing to implement the interface and view model base.
 
-## STEP 2: Application Startup
+### STEP 2: Application Startup
 
 Once we have an `ApplicationViewModel` we can proceed to implementing the basic startup in our projects `App.xaml.cs`. We will do this in an override method of `OnStartup`.
 
@@ -67,7 +76,7 @@ As you can see there are **two options** for managing your applications data tem
 
 - **Option 2:** Use the managers `RegisterDataTemplate()` method to define specific type pairs. This is shown as option 2 in the example above.
 
-### Wait! What about Line  9?
+**Wait! What about Line  9?**
 You may be curious as to what exactly is going on here:
 ````C#
 core.Startup(new AppViewModel(), new BlueViewModel(), true);
@@ -75,7 +84,7 @@ core.Startup(new AppViewModel(), new BlueViewModel(), true);
 
 Here we are registering our `AppViewModel` to our navigation service. This is why we needed the provider interface earlier. However, sometimes you would like to instantiate a default view for failed navigations, or you would like to simply force a startup view. In the example, `BlueViewModel` is set as a default navigation object, and the boolean tells it that we want to force this default view on startup. So when we launch the application, the view for `BlueViewModel` is the first thing the user will see.
 
-# STEP 3: Setting up the Window
+### STEP 3: Setting up the Window
 
 We have two options for setting up the window. 
 - **Option 1:** will require some modification of our xaml in `MainWindow`.
@@ -126,7 +135,7 @@ An alternative would be to simply setup the data context in your `MainWindow` co
 
 **NOTE:** In case you are wondering, the `Provider` and `NavigationService` are setup in our startup call we made earlier in *Step 2*. The provider is actually our `AppViewModel`.
 
-# STEP 4: Setting up Window Content
+### STEP 4: Setting up Window Content
 Lastly, all we have left to do it give our window a `UserControl` for its content, and bind it to our providers `Current` property.
 
 *MainWindow Content Example*
