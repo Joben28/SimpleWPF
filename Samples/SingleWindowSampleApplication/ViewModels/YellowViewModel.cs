@@ -16,14 +16,16 @@ namespace SingleWindowSampleApplication.ViewModels
         {
             _redViewModel = redViewModel;
             GotoRedCommand = new RelayCommand(GotoRed);
-            NavCommand = new RelayCommand<Type>(Nav);
+            NavCommand = new RelayCommand<NavigationViewModelBase>(Nav);
         }
 
-        private void Nav(Type obj)
+        //Navigate from object in XAML
+        private void Nav(NavigationViewModelBase viewModel)
         {
-            Navigate(Activator.CreateInstance(obj) as NavigationViewModelBase);
+            Navigate(viewModel);
         }
 
+        //Navigate from class dependency
         private void GotoRed()
         {
             Navigate(_redViewModel);
