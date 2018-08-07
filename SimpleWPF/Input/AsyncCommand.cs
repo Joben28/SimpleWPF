@@ -11,20 +11,14 @@ namespace SimpleWPF.Input
     /// </summary>
     public class AsyncCommand : ObservableObject, IObserver, IAsyncCommand
     {
+        private AsyncNotificationStatus _status = AsyncNotificationStatus.Idle;
         public AsyncNotificationStatus Status
         {
-            get
-            {
-                return _status;
-            }
-            set
-            {
-                _status = value; OnPropertyChanged();
-            }
+            get { return _status; }
+            set { OnPropertyChanged(ref _status, value); }
         }
 
-        private AsyncNotificationStatus _status = AsyncNotificationStatus.Idle;
-        private ObservableTask _obvservableTask = null;
+        private ObservableTask _obvservableTask;
         private Func<object, bool> _canExecute;
 
         public event EventHandler CanExecuteChanged
@@ -35,11 +29,11 @@ namespace SimpleWPF.Input
 
         public AsyncCommand(Func<object, Task> execute, Func<object, bool> canExecute)
         {
-            if (execute != null)
-            {
-                _obvservableTask = new ObservableTask(execute);
-                _obvservableTask.Register(this);
-            }
+            if (execute == null)
+                throw new ArgumentNullException(nameof(execute));
+
+            _obvservableTask = new ObservableTask(execute);
+            _obvservableTask.Register(this);
             _canExecute = canExecute;
         }
 
