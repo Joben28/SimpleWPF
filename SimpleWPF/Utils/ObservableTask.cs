@@ -7,23 +7,24 @@ namespace SimpleWPF.Utils
 {
     internal class ObservableTask : IObservable
     {
-        private AsyncNotificationStatus _status;
-        private Func<object, Task> execute;
+        private Func<object, Task> _execute;
 
-        public IList<IObserver> Observers { get; private set; } = new List<IObserver>();
+        private AsyncNotificationStatus _status;
         public AsyncNotificationStatus Status
         {
+            get { return _status; }
             set
             {
                 _status = value;
                 Notify();
             }
-            get { return _status; }
         }
+
+        public IList<IObserver> Observers { get; private set; } = new List<IObserver>();
 
         public ObservableTask(Func<object, Task> execute)
         {
-            this.execute = execute;
+            _execute = execute;
         }
 
         public void Notify()
@@ -53,7 +54,7 @@ namespace SimpleWPF.Utils
             try
             {
                 Status = AsyncNotificationStatus.Busy;
-                execute.Invoke(parameter).ConfigureAwait(false).GetAwaiter().OnCompleted(() => Status = AsyncNotificationStatus.Complete);
+                _execute.Invoke(parameter).ConfigureAwait(false).GetAwaiter().OnCompleted(() => Status = AsyncNotificationStatus.Complete);
             }
             catch (TaskCanceledException)
             {
