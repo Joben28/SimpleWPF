@@ -50,14 +50,16 @@
     <Compile Include="Input\AsyncNotificationStatus.cs" />
     <Compile Include="Input\IAsyncCommand.cs" />
     <Compile Include="Input\AsyncCommand.cs" />
-    <Compile Include="Input\AsyncCommandMonitor.cs" />
     <Compile Include="Navigation\Arguments\NavigationEventArgs.cs" />
     <Compile Include="Navigation\INavigationProvider.cs" />
     <Compile Include="Navigation\INavigationWindow.cs" />
     <Compile Include="Navigation\NavigationService.cs" />
     <Compile Include="Navigation\NavigationWindow.cs" />
+    <Compile Include="Abstractions\Observer\IObservable.cs" />
+    <Compile Include="Abstractions\Observer\IObserver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Input\RelayCommand.cs" />
+    <Compile Include="Utils\ObservableTask.cs" />
     <Compile Include="ViewModels\NavigationProviderViewModel.cs" />
     <Compile Include="ViewModels\NavigationViewModelBase.cs" />
     <Compile Include="Components\ObservableObject.cs" />
