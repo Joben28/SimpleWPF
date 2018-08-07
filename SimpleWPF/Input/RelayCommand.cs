@@ -19,9 +19,7 @@ namespace SimpleWPF.Input
          }
         public RelayCommand(Action<T> execute, Func<T, bool> canExecute = null)
         {
-            if (_execute == null)
-                throw new ArgumentNullException(nameof(execute));
-            _execute = execute;
+            _execute = execute ?? throw new ArgumentNullException(nameof(execute));
             _canExecute = canExecute ?? (_ => true);
         }
 
