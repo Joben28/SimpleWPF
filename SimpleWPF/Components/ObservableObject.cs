@@ -15,7 +15,7 @@ namespace SimpleWPF.Components
         /// Notify a property change
         /// </summary>
         /// <param name="propertyName">Name of property to update</param>
-        protected virtual void OnPropertyChanged(string propertyName)
+        protected virtual void OnPropertyChanged([CallerMemberName]string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

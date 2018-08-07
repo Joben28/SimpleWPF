@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using SimpleWPF.Components;
+using SimpleWPF.Utils;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -10,16 +9,22 @@ namespace SimpleWPF.Input
     /// <summary>
     /// An async command implementation
     /// </summary>
-    public class AsyncCommand : IAsyncCommand
+    public class AsyncCommand : ObservableObject, IObserver, IAsyncCommand
     {
-        /// <summary>
-        /// Monitor for the commands current status
-        /// </summary>
-        public AsyncCommandMonitor CommandMonitor { get; private set; }
+        public AsyncNotificationStatus Status
+        {
+            get
+            {
+                return _status;
+            }
+            set
+            {
+                _status = value; OnPropertyChanged();
+            }
+        }
 
-        public bool IsCanceled { get; private set; }
-
-        private Func<object, Task> _execute;
+        private AsyncNotificationStatus _status = AsyncNotificationStatus.Idle;
+        private ObservableTask _obvservableTask = null;
         private Func<object, bool> _canExecute;
 
         public event EventHandler CanExecuteChanged
@@ -30,8 +35,11 @@ namespace SimpleWPF.Input
 
         public AsyncCommand(Func<object, Task> execute, Func<object, bool> canExecute)
         {
-            CommandMonitor = new AsyncCommandMonitor();
-            _execute = execute;
+            if (execute != null)
+            {
+                _obvservableTask = new ObservableTask(execute);
+                _obvservableTask.Register(this);
+            }
             _canExecute = canExecute;
         }
 
@@ -39,7 +47,7 @@ namespace SimpleWPF.Input
 
         public bool CanExecute(object parameter)
         {
-            if (CommandMonitor.Status == AsyncNotificationStatus.Busy)
+            if (Status == AsyncNotificationStatus.Busy)
                 return false;
 
             if (_canExecute == null)
@@ -50,31 +58,18 @@ namespace SimpleWPF.Input
 
         public void Execute(object parameter)
         {
-            if (_execute == null)
-                return;
-
-            IsCanceled = false;
-
-            var commandTask = _execute.Invoke(parameter);
-            ExecuteAsync(commandTask);
-            CommandMonitor.MonitorTask(commandTask);
-        }
-
-        public async void ExecuteAsync(Task task)
-        {
-            await task;
+            _obvservableTask.Run(parameter);
             RaiseCanExecuteChanged();
-        }
-
-        public void CancelAsync()
-        {
-            CommandMonitor.CancelMonitor();
-            IsCanceled = true;
         }
 
         protected void RaiseCanExecuteChanged()
         {
             CommandManager.InvalidateRequerySuggested();
+        }
+
+        public void Update()
+        {
+            Status = _obvservableTask.Status;
         }
     }
 }

@@ -9,7 +9,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Background="Yellow">
         <StackPanel Width="100" Height="100">
-            <Button Command="{Binding GotoRedCommand}" CommandParameter="{x:Type vm:RedViewModel}">
+            <Button Command="{Binding GotoRedCommand}" CommandParameter="{x:Type vm:BlueViewModel}">
                 Goto Red
             </Button>
         </StackPanel>
