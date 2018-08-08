@@ -47,6 +47,11 @@
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Core\SimpleCore.cs" />
     <Compile Include="Core\DataTemplateManager.cs" />
+    <Compile Include="Dialog\DialogResults.cs" />
+    <Compile Include="Dialog\DialogService.cs" />
+    <Compile Include="Dialog\DialogViewModelBase.cs" />
+    <Compile Include="Dialog\IDialogService.cs" />
+    <Compile Include="Dialog\IDialogWindow.cs" />
     <Compile Include="Input\AsyncNotificationStatus.cs" />
     <Compile Include="Input\IAsyncCommand.cs" />
     <Compile Include="Input\AsyncCommand.cs" />
