@@ -27,8 +27,9 @@ namespace SimpleWPF.Dialog
         /// <returns>returns <typeparamref name="T"/> result.</returns>
         public T OpenDialog<T>(DialogViewModelBase<T> viewModel)
         {
-            _window.DataContext = viewModel ?? throw new ArgumentNullException(nameof(viewModel));
-            _window.ShowDialog();
+            var window = (IDialogWindow)Activator.CreateInstance(_window.GetType());
+            window.DataContext = viewModel ?? throw new ArgumentNullException(nameof(viewModel));
+            window.ShowDialog();
             return viewModel.DialogResult;
         }
     }
