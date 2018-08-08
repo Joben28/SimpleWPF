@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateProject", "Template
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavigationCacheSampleApplication", "Samples\NavigationCacheSampleApplication\NavigationCacheSampleApplication.csproj", "{4E9BD8C3-542D-4705-9DCA-CA5A6C39D1A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DialogSampleApplication", "DialogSampleApplication\DialogSampleApplication.csproj", "{083122B9-26CB-4432-AD93-5164B7488BC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{4E9BD8C3-542D-4705-9DCA-CA5A6C39D1A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E9BD8C3-542D-4705-9DCA-CA5A6C39D1A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E9BD8C3-542D-4705-9DCA-CA5A6C39D1A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{083122B9-26CB-4432-AD93-5164B7488BC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{083122B9-26CB-4432-AD93-5164B7488BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{083122B9-26CB-4432-AD93-5164B7488BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{083122B9-26CB-4432-AD93-5164B7488BC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{2D8E4EAA-2948-496E-B2D7-EADB3070C4DC} = {3D2F4D66-E021-4C72-AB01-30E2AF59D52D}
 		{59942EE5-B94B-4CE8-9041-65B964BEE596} = {3D2F4D66-E021-4C72-AB01-30E2AF59D52D}
 		{4E9BD8C3-542D-4705-9DCA-CA5A6C39D1A3} = {3D2F4D66-E021-4C72-AB01-30E2AF59D52D}
+		{083122B9-26CB-4432-AD93-5164B7488BC0} = {3D2F4D66-E021-4C72-AB01-30E2AF59D52D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3CF4674F-9A91-4E9B-9707-EF28CD9D3D12}

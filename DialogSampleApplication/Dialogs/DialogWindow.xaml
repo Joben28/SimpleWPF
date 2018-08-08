@@ -1,0 +1,12 @@
+﻿<Window x:Class="DialogSampleApplication.Dialogs.DialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DialogSampleApplication.Dialogs"
+        mc:Ignorable="d"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen"
+        Title="{Binding Title}" Height="300" Width="300">
+    <ContentControl Content="{Binding}" />
+</Window>
