@@ -11,11 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiWindowSampleApplicatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleWindowSampleApplication", "Samples\SingleWindowSampleApplication\SingleWindowSampleApplication.csproj", "{2D8E4EAA-2948-496E-B2D7-EADB3070C4DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateProject", "TemplateProject\TemplateProject.csproj", "{59942EE5-B94B-4CE8-9041-65B964BEE596}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateProject", "Samples\TemplateProject\TemplateProject.csproj", "{59942EE5-B94B-4CE8-9041-65B964BEE596}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavigationCacheSampleApplication", "Samples\NavigationCacheSampleApplication\NavigationCacheSampleApplication.csproj", "{4E9BD8C3-542D-4705-9DCA-CA5A6C39D1A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DialogSampleApplication", "DialogSampleApplication\DialogSampleApplication.csproj", "{083122B9-26CB-4432-AD93-5164B7488BC0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DialogSampleApplication", "Samples\DialogSampleApplication\DialogSampleApplication.csproj", "{083122B9-26CB-4432-AD93-5164B7488BC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
